@@ -3,14 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Icon from "./ui/Icon";
-import {
-  TELEGRAM_URL,
-  PRICE_EARLY_BIRD,
-  PRICE_REGULAR,
-  EARLY_BIRD_DEADLINE,
-  COURSE_START_DATE,
-  PRICE_SAVINGS,
-} from "@/config/constants";
+import { TELEGRAM_URL, PRICE_REGULAR, COURSE_START_DATE } from "@/config/constants";
+
 
 export default function Hero() {
   const [imageError, setImageError] = useState(false);
@@ -75,35 +69,13 @@ export default function Hero() {
             <div
               className="inline-block bg-black p-6 sm:p-8 rounded-3xl shadow-2xl animate-fade-in-up [animation-delay:400ms] border-2 border-[#E50914]/30 relative"
             >
-              {/* Early Bird Badge */}
-              <div
-                className="absolute -top-3 -right-3 bg-green-500 text-white px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-lg animate-pulse"
-              >
-                🔥 Раннее бронирование
-              </div>
 
-              {/* Prices */}
-              <div
-                className="flex items-baseline gap-3 sm:gap-4 mb-3 flex-wrap justify-center lg:justify-start"
-              >
-                <div
-                  className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white"
-                >
-                  {PRICE_EARLY_BIRD.toLocaleString("ru-RU")} ₽
-                </div>
-                <div className="flex flex-col">
-                  <div
-                    className="text-2xl sm:text-3xl lg:text-4xl text-gray-500 line-through"
-                  >
-                    {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
-                  </div>
-                  <div
-                    className="text-xs sm:text-sm text-green-400 font-bold"
-                  >
-                    Экономия {PRICE_SAVINGS.toLocaleString("ru-RU")} ₽
-                  </div>
-                </div>
-              </div>
+             {/* Prices */}
+<div className="flex items-baseline gap-3 sm:gap-4 mb-3 justify-center lg:justify-start">
+  <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
+    {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
+  </div>
+</div>
 
               <p
                 className="text-xs sm:text-sm text-gray-400 max-w-xs mb-3"
@@ -111,28 +83,7 @@ export default function Hero() {
                 Включены подписки на Cursor и Onlook на время курса
               </p>
 
-              {/* Urgency Notice */}
-              <div
-                className="flex items-start gap-2 text-xs sm:text-sm text-yellow-400 font-bold bg-yellow-500/10 border border-yellow-500/30 px-3 py-2 rounded-lg"
-              >
-                <Icon
-                  name="clock"
-                  className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5"
-                />
-                <div>
-                  <div>
-                    Цена {PRICE_EARLY_BIRD.toLocaleString("ru-RU")} ₽ только до{" "}
-                    {EARLY_BIRD_DEADLINE}!
-                  </div>
-                  <div
-                    className="text-gray-400 font-normal mt-0.5"
-                  >
-                    С 16 ноября — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            
             {/* CTA Button */}
             <div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up [animation-delay:500ms]"
@@ -143,7 +94,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#E50914] hover:bg-[#c20712] text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:shadow-[#E50914]/50 hover:scale-105"
               >
-                Записаться за {PRICE_EARLY_BIRD.toLocaleString("ru-RU")} ₽
+                Записаться за {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
               </a>
             </div>
 
