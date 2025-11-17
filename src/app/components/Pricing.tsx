@@ -39,9 +39,10 @@ export default function Pricing() {
               {/* Левая колонка: цена */}
               <div className="text-center lg:text-left">
                 <div className="mb-6">
-                  <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white">
-                    {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
-                  </div>
+                  <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white whitespace-nowrap">
+  {PRICE_REGULAR.toLocaleString("ru-RU")}
+  {"\u00A0"}₽
+</div>
                 </div>
 
                 <div className="text-sm text-gray-500 mb-4">
