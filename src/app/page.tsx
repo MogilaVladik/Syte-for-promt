@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ForWhom from "./components/ForWhom";
@@ -24,6 +26,20 @@ export default function Page() {
       <VIPSupport />
       <FAQ />
       <ScrollToTop />
+
+      {/* Ссылка на оферту в самом конце страницы */}
+      <section className="mt-16 sm:mt-20 border-t border-white/10 pt-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-end">
+            <Link
+              href="/offer"
+              className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
+            >
+              Договор-оферта
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
