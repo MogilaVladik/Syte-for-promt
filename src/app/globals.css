@@ -135,3 +135,41 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* === Anti-copy для страницы оферты (страница /offer) === */
+.offer-protect {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+.offer-protect *::selection {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.offer-protect img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+.offer-watermark {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ffffff 0,
+    #ffffff 2px,
+    transparent 2px,
+    transparent 24px
+  );
+}
+
+.offer-locked {
+  filter: blur(6px);
+}
