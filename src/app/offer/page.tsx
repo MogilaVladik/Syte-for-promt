@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { OFFER_PROTECTION_INTERVAL, OFFER_WINDOW_SIZE_THRESHOLD } from "@/config/constants";
 
 export default function OfferPage() {
   const [locked, setLocked] = useState(false);
@@ -48,18 +49,37 @@ export default function OfferPage() {
     };
   }, []);
 
-  // Простая эвристика на открытие DevTools
+  // Оптимизированная проверка размера окна с учетом видимости страницы
   useEffect(() => {
     let w = window.outerWidth;
     let h = window.outerHeight;
-    const id = setInterval(() => {
+    let isPageVisible = !document.hidden;
+
+    const handleVisibilityChange = () => {
+      isPageVisible = !document.hidden;
+    };
+
+    const checkWindowSize = () => {
+      // Проверяем только если страница видима
+      if (!isPageVisible) return;
+
       const dw = Math.abs(window.outerWidth - w);
       const dh = Math.abs(window.outerHeight - h);
       w = window.outerWidth;
       h = window.outerHeight;
-      if (dw > 160 || dh > 160) setLocked(true);
-    }, 1200);
-    return () => clearInterval(id);
+      
+      if (dw > OFFER_WINDOW_SIZE_THRESHOLD || dh > OFFER_WINDOW_SIZE_THRESHOLD) {
+        setLocked(true);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    const id = setInterval(checkWindowSize, OFFER_PROTECTION_INTERVAL);
+    
+    return () => {
+      clearInterval(id);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   return (

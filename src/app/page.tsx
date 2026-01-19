@@ -12,20 +12,23 @@ import Pricing from "./components/Pricing";
 import VIPSupport from "./components/VIPSupport";
 import FAQ from "./components/FAQ";
 import ScrollToTop from "./components/ScrollToTop";
+import CourseSchema from "./components/CourseSchema";
 
 export default function Page() {
   return (
-    <div className="w-full min-h-screen">
-      <Navbar />
-      <Hero />
-      <ForWhom />
-      <Program />
-      <Results />
-      <Format />
-      <Pricing />
-      <VIPSupport />
-      <FAQ />
-      <ScrollToTop />
+    <>
+      <CourseSchema />
+      <div className="w-full min-h-screen">
+        <Navbar />
+        <Hero />
+        <ForWhom />
+        <Program />
+        <Results />
+        <Format />
+        <Pricing />
+        <VIPSupport />
+        <FAQ />
+        <ScrollToTop />
 
       {/* Ссылка на оферту в самом конце страницы */}
       <section className="mt-16 sm:mt-20 mb-10 sm:mb-12 border-t border-white/10 pt-6">
@@ -40,6 +43,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

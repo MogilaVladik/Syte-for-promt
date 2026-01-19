@@ -1,12 +1,14 @@
-interface IconProps {
-  name:
-    | "check"
-    | "star"
-    | "clock"
-    | "telegram"
-    | "arrow-down"
-    | "calendar"
-    | "arrow-up";
+export type IconName =
+  | "check"
+  | "star"
+  | "clock"
+  | "telegram"
+  | "arrow-down"
+  | "calendar"
+  | "arrow-up";
+
+export interface IconProps {
+  name: IconName;
   className?: string;
 }
 

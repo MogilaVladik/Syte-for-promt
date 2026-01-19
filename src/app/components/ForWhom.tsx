@@ -29,11 +29,12 @@ export default function ForWhom() {
       <div
         className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
       >
-        {audience.map((item, index) => (
-          <Card
-            key={index}
-            className="group relative p-6 sm:p-8 rounded-3xl"
-          >
+        {audience.length > 0 ? (
+          audience.map((item) => (
+            <Card
+              key={`audience-${item.title}`}
+              className="group relative p-6 sm:p-8 rounded-3xl"
+            >
             <div
               className="text-5xl sm:text-6xl mb-4 group-hover:scale-110 transition-transform"
             >
@@ -56,7 +57,12 @@ export default function ForWhom() {
               className="absolute inset-0 bg-gradient-to-br from-[#E50914]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"
             />
           </Card>
-        ))}
+          ))
+        ) : (
+          <Card className="p-6 sm:p-8">
+            <p className="text-gray-400">Информация будет доступна в ближайшее время.</p>
+          </Card>
+        )}
       </div>
     </Section>
   );

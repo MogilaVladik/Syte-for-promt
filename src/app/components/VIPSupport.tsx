@@ -1,12 +1,12 @@
 "use client";
 
-import { TELEGRAM_URL, PRICE_VIP, PRICE_EARLY_BIRD } from "@/config/constants";
+import { TELEGRAM_URL, PRICE_VIP, PRICE_REGULAR } from "@/config/constants";
 import Icon from "./ui/Icon";
 import Button from "./ui/Button";
 
 export default function VIPSupport() {
   const vipIncludes = [
-    { label: `Полный курс (${PRICE_EARLY_BIRD.toLocaleString("ru-RU")} ₽)` },
+    { label: `Полный курс (${PRICE_REGULAR.toLocaleString("ru-RU")} ₽)` },
     { label: "3 персональные сессии (100 000 ₽)" },
     { label: "Инсайды из Китая (бесценно)" },
   ];

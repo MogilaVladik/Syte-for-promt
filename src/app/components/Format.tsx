@@ -1,6 +1,5 @@
-"use client";
-
 import { features, schedule } from "@/data/course";
+import type { Feature, ScheduleItem } from "@/data/course";
 import Card from "./ui/Card";
 
 export default function Format() {
@@ -38,9 +37,11 @@ export default function Format() {
             </h3>
             <div
               className="grid sm:grid-cols-2 gap-4 sm:gap-6"
+              role="list"
             >
-              {features.map((feature, index) => (
-                <Card key={index} className="p-6">
+              {features.length > 0 ? (
+                features.map((feature: Feature) => (
+                  <Card key={`feature-${feature.title}`} className="p-6">
                   <div className="text-4xl mb-3">
                     {feature.icon}
                   </div>
@@ -49,11 +50,16 @@ export default function Format() {
                   >
                     {feature.title}
                   </h4>
-                  <p className="text-sm text-gray-400">
-                    {feature.description}
-                  </p>
+                    <p className="text-sm text-gray-400">
+                      {feature.description}
+                    </p>
+                  </Card>
+                ))
+              ) : (
+                <Card className="p-6">
+                  <p className="text-gray-400">Информация будет доступна в ближайшее время.</p>
                 </Card>
-              ))}
+              )}
             </div>
           </div>
 
@@ -64,33 +70,39 @@ export default function Format() {
             >
               Предварительное расписание
             </h3>
-            <div className="space-y-4">
-              {schedule.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-r from-[#E50914]/10 to-transparent border border-[#E50914]/30 p-6 rounded-2xl hover:border-[#E50914]/50 transition-all"
-                >
+            <div className="space-y-4" role="list">
+              {schedule.length > 0 ? (
+                schedule.map((item: ScheduleItem, index: number) => (
                   <div
-                    className="flex items-center justify-between gap-4"
+                    key={`schedule-${item.date}-${index}`}
+                    className="bg-gradient-to-r from-[#E50914]/10 to-transparent border border-[#E50914]/30 p-6 rounded-2xl hover:border-[#E50914]/50 transition-all"
                   >
-                    <div>
-                      <div
-                        className="text-2xl font-bold text-white mb-1"
-                      >
-                        Занятие {index + 1}
-                      </div>
-                      <div className="text-gray-400">
-                        {item.date} • {item.day}
-                      </div>
-                    </div>
                     <div
-                      className="text-xl font-bold text-[#E50914]"
+                      className="flex items-center justify-between gap-4"
                     >
-                      {item.time}
+                      <div>
+                        <div
+                          className="text-2xl font-bold text-white mb-1"
+                        >
+                          Занятие {index + 1}
+                        </div>
+                        <div className="text-gray-400">
+                          {item.date} • {item.day}
+                        </div>
+                      </div>
+                      <div
+                        className="text-xl font-bold text-[#E50914]"
+                      >
+                        {item.time}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                <Card className="p-6">
+                  <p className="text-gray-400">Расписание будет опубликовано в ближайшее время.</p>
+                </Card>
+              )}
             </div>
 
             {/* Note */}

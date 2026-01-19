@@ -28,25 +28,35 @@ export default function Results() {
       {/* Results Grid */}
       <div
         className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+        role="list"
       >
-        {results.map((result, index) => (
-          <Card
-            key={index}
-            className="group p-6 sm:p-8 text-center"
-          >
-            <div
-              className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform"
+        {results.length > 0 ? (
+          results.map((result) => (
+            <Card
+              key={`result-${result.text}`}
+              className="group p-6 sm:p-8 text-center"
+              hover={true}
             >
-              {result.icon}
-            </div>
+              <div
+                className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform"
+                role="img"
+                aria-label={result.icon}
+              >
+                {result.icon}
+              </div>
 
-            <p
-              className="text-sm sm:text-base text-gray-300 font-medium leading-snug"
-            >
-              {result.text}
-            </p>
+              <p
+                className="text-sm sm:text-base text-gray-300 font-medium leading-snug"
+              >
+                {result.text}
+              </p>
+            </Card>
+          ))
+        ) : (
+          <Card className="p-6 sm:p-8">
+            <p className="text-gray-400">Результаты курса будут обновлены.</p>
           </Card>
-        ))}
+        )}
       </div>
 
       {/* Additional info */}

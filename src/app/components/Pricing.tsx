@@ -1,7 +1,7 @@
 "use client";
 
 import { courseIncludes } from "@/data/course";
-import { TELEGRAM_URL, PRICE_REGULAR } from "@/config/constants";
+import { TELEGRAM_URL, PRICE_REGULAR, PRICE_PER_LESSON, COURSE_START_DATE } from "@/config/constants";
 import Icon from "./ui/Icon";
 import Button from "./ui/Button";
 
@@ -31,7 +31,7 @@ export default function Pricing() {
             {/* бейдж «старт …» оставляем, если нужен. Зеленого «До …» больше нет */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
               <div className="bg-[#E50914] text-white px-6 py-2 rounded-full text-sm font-bold">
-                СТАРТ 15 ДЕКАБРЯ
+                СТАРТ {COURSE_START_DATE.toUpperCase()}
               </div>
             </div>
 
@@ -46,7 +46,7 @@ export default function Pricing() {
                 </div>
 
                 <div className="text-sm text-gray-500 mb-4">
-                  ~{Math.round(PRICE_REGULAR / 4).toLocaleString("ru-RU")} ₽ за занятие
+                  ~{PRICE_PER_LESSON.toLocaleString("ru-RU")} ₽ за занятие
                 </div>
 
                 {/* Кнопка без ограничений по дате и без «спеццена до …» */}
@@ -61,12 +61,16 @@ export default function Pricing() {
                   Что включено
                 </h3>
                 <ul className="space-y-4">
-                  {courseIncludes.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 text-gray-300">
+                  {courseIncludes.length > 0 ? (
+                    courseIncludes.map((item, index) => (
+                      <li key={`include-${index}-${item.slice(0, 20)}`} className="flex items-start gap-3 text-gray-300">
                       <Icon name="check" className="w-5 h-5 text-[#E50914] flex-shrink-0 mt-0.5" />
-                      <span className="text-base sm:text-lg">{item}</span>
-                    </li>
-                  ))}
+                        <span className="text-base sm:text-lg">{item}</span>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-gray-400">Список включенных услуг будет обновлен.</li>
+                  )}
                 </ul>
 
                 {/* Примечание про подписки оставляем как есть */}

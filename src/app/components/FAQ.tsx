@@ -5,6 +5,7 @@ import { faqs } from "@/data/faq";
 import { TELEGRAM_URL } from "@/config/constants";
 import Icon from "./ui/Icon";
 import Button from "./ui/Button";
+import Card from "./ui/Card";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -46,16 +47,23 @@ export default function FAQ() {
 
         {/* FAQ Accordion */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-[#E50914]/50"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full p-6 sm:p-8 flex items-start justify-between gap-4 text-left hover:bg-white/5 transition-colors"
-                aria-expanded={openIndex === index}
-              >
+          {faqs.length > 0 ? (
+            faqs.map((faq, index) => {
+              const faqId = `faq-${index}`;
+              const isOpen = openIndex === index;
+              
+              return (
+                <div
+                  key={faqId}
+                  className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-[#E50914]/50"
+                >
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full p-6 sm:p-8 flex items-start justify-between gap-4 text-left hover:bg-white/5 transition-colors"
+                    aria-expanded={isOpen}
+                    aria-controls={`${faqId}-content`}
+                    id={`${faqId}-button`}
+                  >
                 <span
                   className="text-lg sm:text-xl font-semibold text-white pr-4"
                 >
@@ -71,19 +79,28 @@ export default function FAQ() {
                 </div>
               </button>
 
-              {openIndex === index && (
-                <div
-                  className="px-6 sm:px-8 pb-6 sm:pb-8 border-t border-white/10 animate-fade-in-up"
-                >
-                  <p
-                    className="mt-4 text-base sm:text-lg text-gray-300 leading-relaxed"
-                  >
-                    {faq.answer}
-                  </p>
+                  {isOpen && (
+                    <div
+                      id={`${faqId}-content`}
+                      role="region"
+                      aria-labelledby={`${faqId}-button`}
+                      className="px-6 sm:px-8 pb-6 sm:pb-8 border-t border-white/10 animate-fade-in-up"
+                    >
+                      <p
+                        className="mt-4 text-base sm:text-lg text-gray-300 leading-relaxed"
+                      >
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
+              );
+            })
+          ) : (
+            <Card className="p-6 sm:p-8">
+              <p className="text-gray-400">Вопросы и ответы будут добавлены в ближайшее время.</p>
+            </Card>
+          )}
         </div>
 
         {/* CTA */}

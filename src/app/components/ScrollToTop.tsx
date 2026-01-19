@@ -2,16 +2,17 @@
 
 import { useEffect, useState } from "react";
 import Icon from "./ui/Icon";
+import { SCROLL_TO_TOP_THRESHOLD } from "@/config/constants";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 500);
+      setIsVisible(window.scrollY > SCROLL_TO_TOP_THRESHOLD);
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 

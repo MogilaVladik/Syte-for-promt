@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { lessons } from "@/data/lessons";
+import type { Lesson } from "@/data/lessons";
 import Icon from "./ui/Icon";
 import Card from "./ui/Card";
+import ImageWithFallback from "./ui/ImageWithFallback";
 
 export default function Program() {
-  const [imageError, setImageError] = useState(false);
-
   return (
     <section
       id="program"
@@ -41,12 +39,13 @@ export default function Program() {
 
             {/* Lessons */}
             <div className="space-y-4">
-              {lessons.map((lesson) => (
-                <Card
-                  key={lesson.number}
-                  hover={false}
-                  className="p-6 sm:p-8"
-                >
+              {lessons.length > 0 ? (
+                lessons.map((lesson: Lesson) => (
+                  <Card
+                    key={`lesson-${lesson.number}`}
+                    hover={false}
+                    className="p-6 sm:p-8"
+                  >
                   <div
                     className="flex items-start gap-4 sm:gap-6"
                   >
@@ -92,7 +91,12 @@ export default function Program() {
                     </div>
                   </div>
                 </Card>
-              ))}
+                ))
+              ) : (
+                <Card className="p-6 sm:p-8">
+                  <p className="text-gray-400">Программа курса будет доступна в ближайшее время.</p>
+                </Card>
+              )}
             </div>
           </div>
 
@@ -111,74 +115,21 @@ export default function Program() {
                     className="absolute inset-0 bg-[#E50914]/10 blur-3xl rounded-full"
                   />
 
-                  <div
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    {!imageError ? (
-                      <Image
-                        src="/images/bulldog-coder.webp"
-                        alt="Голубой французский бульдог за компьютером"
-                        fill
-                        className="object-contain opacity-90"
-                        onError={() => setImageError(true)}
-                      />
-                    ) : (
-                      <div
-                        className="flex flex-col items-center justify-center gap-4"
-                      >
-                        <div className="text-8xl">
-                          🐶
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <ImageWithFallback
+                      src="/images/bulldog-coder.webp"
+                      alt="Голубой французский бульдог за компьютером"
+                      fill
+                      className="object-contain opacity-90"
+                      fallback={
+                        <div className="flex flex-col items-center justify-center gap-4">
+                          <div className="text-8xl">🐶</div>
+                          <div className="text-6xl opacity-80">👓</div>
+                          <div className="text-4xl">⌨️</div>
                         </div>
-                        <div className="text-6xl opacity-80">
-                          👓
-                        </div>
-                        <div className="text-4xl">
-                          ⌨️
-                        </div>
-                      </div>
-                    )}
+                      }
+                    />
                   </div>
-
-                  {imageError && (
-                    <div
-                      className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 rounded-3xl backdrop-blur-sm"
-                    >
-                      <div
-                        className="space-y-2 font-mono text-xs text-green-400"
-                      >
-                        <div
-                          className="flex items-center gap-2"
-                        >
-                          <span className="text-gray-500">
-                            1
-                          </span>
-                          <span>
-                            const prompt = "Create...";
-                          </span>
-                        </div>
-                        <div
-                          className="flex items-center gap-2"
-                        >
-                          <span className="text-gray-500">
-                            2
-                          </span>
-                          <span>
-                            const ai = generateCode();
-                          </span>
-                        </div>
-                        <div
-                          className="flex items-center gap-2"
-                        >
-                          <span className="text-gray-500">
-                            3
-                          </span>
-                          <span className="animate-pulse">
-                            ▊
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>

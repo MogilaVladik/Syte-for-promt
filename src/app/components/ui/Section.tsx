@@ -1,6 +1,8 @@
-interface SectionProps {
+import type { ReactNode } from "react";
+
+export interface SectionProps {
   id?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   gradient?: "dark-to-darker" | "darker-to-dark";
 }
