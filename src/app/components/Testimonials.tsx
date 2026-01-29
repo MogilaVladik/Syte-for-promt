@@ -63,11 +63,11 @@ export default function Testimonials() {
               key={`testimonial-page-${pageIndex}`}
               className="snap-start shrink-0 w-full"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+              <div className="flex flex-col lg:flex-row lg:items-stretch lg:justify-center gap-6 lg:gap-8">
                 {pageItems.map((t, i) => (
                   <div
                     key={`testimonial-${t.name}-${pageIndex}-${i}`}
-                    className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col h-full"
+                    className="w-full lg:w-[calc((100%-4rem)/3)] bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col h-full"
                   >
                     <div className="text-4xl text-[#E50914] mb-4">"</div>
                     <p className="text-gray-300 text-base sm:text-lg mb-4 leading-relaxed flex-1">
