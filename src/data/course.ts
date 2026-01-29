@@ -44,10 +44,10 @@ export const features: Feature[] = [
 ];
 
 export const schedule: ScheduleItem[] = [
-  { date: "15 декабря", day: "Понедельник", time: "20:00 МСК" },
-  { date: "17 декабря", day: "Среда", time: "20:00 МСК" },
-  { date: "21 декабря", day: "Воскресенье", time: "20:00 МСК" },
-  { date: "24 декабря", day: "Среда", time: "20:00 МСК" },
+  { date: "11 марта", day: "Среда", time: "20:00 МСК" },
+  { date: "16 марта", day: "Понедельник", time: "20:00 МСК" },
+  { date: "18 марта", day: "Среда", time: "20:00 МСК" },
+  { date: "23 марта", day: "Понедельник", time: "20:00 МСК" },
 ];
 
 export const courseIncludes: string[] = [
