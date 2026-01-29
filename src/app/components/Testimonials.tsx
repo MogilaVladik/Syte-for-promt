@@ -56,18 +56,18 @@ export default function Testimonials() {
         {/* Testimonials Slider */}
         <div
           ref={scrollerRef}
-          className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
+          className="flex overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory pb-4 pt-2 px-2 sm:px-4"
         >
           {pages.map((pageItems, pageIndex) => (
             <div
               key={`testimonial-page-${pageIndex}`}
-              className="snap-start shrink-0 w-full"
+              className="snap-start shrink-0 w-full px-1 lg:px-2"
             >
               <div className="flex flex-col lg:flex-row lg:items-stretch lg:justify-center gap-6 lg:gap-8">
                 {pageItems.map((t, i) => (
                   <div
                     key={`testimonial-${t.name}-${pageIndex}-${i}`}
-                    className="w-full lg:w-[calc((100%-4rem)/3)] bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col h-full"
+                    className="w-full lg:w-[calc((100%-4rem)/3)] bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col h-full origin-center"
                   >
                     <div className="text-4xl text-[#E50914] mb-4">"</div>
                     <p className="text-gray-300 text-base sm:text-lg mb-4 leading-relaxed flex-1">
