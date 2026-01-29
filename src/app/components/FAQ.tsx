@@ -20,7 +20,7 @@ export default function FAQ() {
       className="py-16 sm:py-24 bg-gradient-to-b from-[#0B0B0B] to-[#1a1a1a] relative"
     >
       <img
-        src="/images/bulldog-5.png"
+        src="/images/bulldog-5.png?v=2"
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute bottom-6 left-4 sm:left-10 w-44 sm:w-56 lg:w-72 opacity-90"

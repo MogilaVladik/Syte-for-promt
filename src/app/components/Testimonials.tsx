@@ -42,7 +42,7 @@ export default function Testimonials() {
       className="py-16 sm:py-24 bg-gradient-to-b from-[#1a1a1a] to-[#0B0B0B] relative"
     >
       <img
-        src="/images/bulldog-3.png"
+        src="/images/bulldog-3.png?v=2"
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute top-6 right-4 sm:right-8 w-40 sm:w-48 lg:w-64 opacity-90"
