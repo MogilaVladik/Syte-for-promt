@@ -62,9 +62,9 @@ export default function Pricing() {
                 </h3>
                 <ul className="space-y-4">
                   {courseIncludes.length > 0 ? (
-                    courseIncludes.map((item, index) => (
-                      <li key={`include-${index}-${item.slice(0, 20)}`} className="flex items-start gap-3 text-gray-300">
-                      <Icon name="check" className="w-5 h-5 text-[#E50914] flex-shrink-0 mt-0.5" />
+                    courseIncludes.map((item) => (
+                      <li key={`include-${item}`} className="flex items-start gap-3 text-gray-300">
+                        <Icon name="check" className="w-5 h-5 text-[#E50914] flex-shrink-0 mt-0.5" />
                         <span className="text-base sm:text-lg">{item}</span>
                       </li>
                     ))

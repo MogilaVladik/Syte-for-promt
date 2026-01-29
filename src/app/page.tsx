@@ -8,6 +8,7 @@ import ForWhom from "./components/ForWhom";
 import Program from "./components/Program";
 import Results from "./components/Results";
 import Format from "./components/Format";
+import Testimonials from "./components/Testimonials";
 import Pricing from "./components/Pricing";
 import VIPSupport from "./components/VIPSupport";
 import FAQ from "./components/FAQ";
@@ -25,6 +26,7 @@ export default function Page() {
         <Program />
         <Results />
         <Format />
+        <Testimonials />
         <Pricing />
         <VIPSupport />
         <FAQ />

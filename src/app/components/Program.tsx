@@ -4,7 +4,6 @@ import { lessons } from "@/data/lessons";
 import type { Lesson } from "@/data/lessons";
 import Icon from "./ui/Icon";
 import Card from "./ui/Card";
-import ImageWithFallback from "./ui/ImageWithFallback";
 
 export default function Program() {
   return (
@@ -116,19 +115,15 @@ export default function Program() {
                   />
 
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <ImageWithFallback
-                      src="/images/bulldog-coder.webp"
-                      alt="Голубой французский бульдог за компьютером"
-                      fill
-                      className="object-contain opacity-90"
-                      fallback={
-                        <div className="flex flex-col items-center justify-center gap-4">
-                          <div className="text-8xl">🐶</div>
-                          <div className="text-6xl opacity-80">👓</div>
-                          <div className="text-4xl">⌨️</div>
-                        </div>
-                      }
-                    />
+                    <div
+                      className="flex flex-col items-center justify-center gap-4"
+                      aria-label="Голубой французский бульдог за компьютером"
+                      role="img"
+                    >
+                      <div className="text-8xl">🐶</div>
+                      <div className="text-6xl opacity-80">👓</div>
+                      <div className="text-4xl">⌨️</div>
+                    </div>
                   </div>
                 </div>
               </div>

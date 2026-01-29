@@ -14,6 +14,7 @@ export const PRICE_PER_LESSON = Math.round(PRICE_REGULAR / 4);
 
 // Dates
 export const COURSE_START_DATE = "15 декабря 2025";
+export const COURSE_START_DATE_ISO = "2025-12-15";
 
 // Course details
 export const LESSON_COUNT = 4;

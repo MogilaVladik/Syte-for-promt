@@ -1,4 +1,4 @@
-import { COURSE_START_DATE, PRICE_REGULAR, LESSON_COUNT, LESSON_DURATION } from "@/config/constants";
+import { COURSE_START_DATE_ISO, PRICE_REGULAR, LESSON_COUNT } from "@/config/constants";
 
 export default function CourseSchema() {
   const schema = {
@@ -34,9 +34,9 @@ export default function CourseSchema() {
       priceCurrency: "RUB",
       availability: "https://schema.org/InStock",
       url: "https://timetoitai.ru",
-      priceValidUntil: COURSE_START_DATE,
+      priceValidUntil: COURSE_START_DATE_ISO,
     },
-    startDate: COURSE_START_DATE,
+    startDate: COURSE_START_DATE_ISO,
     coursePrerequisites: "Знание работы с компьютером на базовом уровне",
     aggregateRating: {
       "@type": "AggregateRating",
@@ -52,4 +52,5 @@ export default function CourseSchema() {
     />
   );
 }
+
 

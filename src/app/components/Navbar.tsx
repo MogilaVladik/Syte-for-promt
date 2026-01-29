@@ -55,6 +55,13 @@ export default function Navbar() {
               Для кого
             </button>
             <button
+              onClick={() => scrollToSection("testimonials")}
+              className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
+              aria-label="Перейти к отзывам и проектам учеников"
+            >
+              Отзывы
+            </button>
+            <button
               onClick={() => scrollToSection("pricing")}
               className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
               aria-label="Перейти к стоимости курса"

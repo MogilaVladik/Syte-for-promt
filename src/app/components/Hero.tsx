@@ -1,7 +1,6 @@
 "use client";
 
 import Icon from "./ui/Icon";
-import ImageWithFallback from "./ui/ImageWithFallback";
 import { TELEGRAM_URL, PRICE_REGULAR, PRICE_PER_LESSON, COURSE_START_DATE } from "@/config/constants";
 
 export default function Hero() {
@@ -89,18 +88,13 @@ export default function Hero() {
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-[#E50914]/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <ImageWithFallback
-                      src="/images/bulldog-hero.webp"
-                      alt="Голубой французский бульдог"
-                      fill
-                      priority
-                      className="object-contain opacity-90"
-                      fallback={
-                        <div className="text-9xl sm:text-[10rem] lg:text-[12rem] opacity-90">
-                          🐶
-                        </div>
-                      }
-                    />
+                    <div
+                      className="text-9xl sm:text-[10rem] lg:text-[12rem] opacity-90"
+                      aria-label="Голубой французский бульдог"
+                      role="img"
+                    >
+                      🐶
+                    </div>
                   </div>
                 </div>
               </div>
