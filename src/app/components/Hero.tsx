@@ -104,13 +104,13 @@ export default function Hero() {
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-[#E50914]/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div
-                      className="text-9xl sm:text-[10rem] lg:text-[12rem] opacity-90"
-                      aria-label="Голубой французский бульдог"
-                      role="img"
-                    >
-                      🐶
-                    </div>
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Cute_French_Bulldog.png/960px-Cute_French_Bulldog.png"
+                      alt="Французский бульдог"
+                      className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-float"
+                      loading="eager"
+                      decoding="async"
+                    />
                   </div>
                 </div>
               </div>

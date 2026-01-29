@@ -139,15 +139,13 @@ export default function Program() {
                   />
 
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div
-                      className="flex flex-col items-center justify-center gap-4"
-                      aria-label="Голубой французский бульдог за компьютером"
-                      role="img"
-                    >
-                      <div className="text-8xl">🐶</div>
-                      <div className="text-6xl opacity-80">👓</div>
-                      <div className="text-4xl">⌨️</div>
-                    </div>
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Blue_fawn_french_bulldog.jpg/500px-Blue_fawn_french_bulldog.jpg"
+                      alt="Французский бульдог"
+                      className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-typing"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 </div>
               </div>
