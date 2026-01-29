@@ -104,8 +104,8 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-[#E50914]/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
-                      src="/images/bulldog-blue-1.png?v=1"
-                      alt="Голубой французский бульдог"
+                      src="/images/bulldog-sticker-glasses.png?v=1"
+                      alt="Голубой французский бульдог в очках"
                       className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-float"
                       loading="eager"
                       decoding="async"
