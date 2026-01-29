@@ -33,7 +33,7 @@ export default function Page() {
         <ScrollToTop />
 
       {/* Ссылка на оферту в самом конце страницы */}
-      <section className="mt-6 sm:mt-8 border-t border-white/10 pt-6 pb-8">
+      <section className="mt-6 sm:mt-8 border-t border-white/10 pt-6 pb-8 bg-gradient-to-b from-[#0B0B0B] to-[#1a1a1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end">
             <Link
