@@ -6,7 +6,11 @@ import Icon from "./ui/Icon";
 
 export default function Testimonials() {
   const itemsPerPage = 3;
-  const pageCount = Math.max(1, Math.ceil(testimonials.length / itemsPerPage));
+  const pages = Array.from(
+    { length: Math.max(1, Math.ceil(testimonials.length / itemsPerPage)) },
+    (_, index) => testimonials.slice(index * itemsPerPage, index * itemsPerPage + itemsPerPage),
+  );
+  const pageCount = pages.length;
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [page, setPage] = useState(0);
 
@@ -52,42 +56,51 @@ export default function Testimonials() {
         {/* Testimonials Slider */}
         <div
           ref={scrollerRef}
-          className="flex gap-6 lg:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
+          className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
         >
-          {testimonials.map((t, i) => (
+          {pages.map((pageItems, pageIndex) => (
             <div
-              key={`testimonial-${t.name}-${i}`}
-              className="snap-start shrink-0 basis-full w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col"
+              key={`testimonial-page-${pageIndex}`}
+              className="snap-start shrink-0 w-full"
             >
-              <div className="text-4xl text-[#E50914] mb-4">"</div>
-              <p className="text-gray-300 text-base sm:text-lg mb-4 leading-relaxed flex-1">
-                {t.text}
-              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                {pageItems.map((t, i) => (
+                  <div
+                    key={`testimonial-${t.name}-${pageIndex}-${i}`}
+                    className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col h-full"
+                  >
+                    <div className="text-4xl text-[#E50914] mb-4">"</div>
+                    <p className="text-gray-300 text-base sm:text-lg mb-4 leading-relaxed flex-1">
+                      {t.text}
+                    </p>
 
-              {/* Ссылка на проект ученика */}
-              {t.projectUrl && (
-                <a
-                  href={t.projectUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#E50914] hover:text-[#c20712] font-semibold text-sm mb-4 transition-colors group"
-                >
-                  <Icon name="external-link" className="w-4 h-4" />
-                  <span>
-                    {t.projectLabel ?? "Смотреть проект"}
-                  </span>
-                  <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden>→</span>
-                </a>
-              )}
+                    {/* Ссылка на проект ученика */}
+                    {t.projectUrl && (
+                      <a
+                        href={t.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-[#E50914] hover:text-[#c20712] font-semibold text-sm mb-4 transition-colors group"
+                      >
+                        <Icon name="external-link" className="w-4 h-4" />
+                        <span>
+                          {t.projectLabel ?? "Смотреть проект"}
+                        </span>
+                        <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden>→</span>
+                      </a>
+                    )}
 
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                <div className="text-4xl shrink-0" aria-hidden>{t.avatar}</div>
-                <div className="min-w-0">
-                  <div className="font-bold text-white">{t.name}</div>
-                  {t.role ? <div className="text-sm text-gray-400">{t.role}</div> : null}
-                  {t.company ? <div className="text-xs text-gray-500">{t.company}</div> : null}
-                </div>
+                    {/* Author */}
+                    <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                      <div className="text-4xl shrink-0" aria-hidden>{t.avatar}</div>
+                      <div className="min-w-0">
+                        <div className="font-bold text-white">{t.name}</div>
+                        {t.role ? <div className="text-sm text-gray-400">{t.role}</div> : null}
+                        {t.company ? <div className="text-xs text-gray-500">{t.company}</div> : null}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
