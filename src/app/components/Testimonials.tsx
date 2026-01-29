@@ -54,16 +54,17 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Slider */}
-        <div
-          ref={scrollerRef}
-          className="flex overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory pb-4 pt-2 px-2 sm:px-4"
-        >
-          {pages.map((pageItems, pageIndex) => (
-            <div
-              key={`testimonial-page-${pageIndex}`}
-              className="snap-start shrink-0 w-full px-1 lg:px-2"
-            >
-              <div className="flex flex-col lg:flex-row lg:items-stretch lg:justify-center gap-6 lg:gap-8">
+        <div className="relative overflow-hidden">
+          <div
+            ref={scrollerRef}
+            className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 pt-2 px-2 sm:px-4"
+          >
+            {pages.map((pageItems, pageIndex) => (
+              <div
+                key={`testimonial-page-${pageIndex}`}
+                className="snap-start shrink-0 w-full px-1 lg:px-2"
+              >
+                <div className="flex flex-col lg:flex-row lg:items-stretch lg:justify-center gap-6 lg:gap-8">
                 {pageItems.map((t, i) => (
                   <div
                     key={`testimonial-${t.name}-${pageIndex}-${i}`}
@@ -101,9 +102,10 @@ export default function Testimonials() {
                     </div>
                   </div>
                 ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Pagination */}
