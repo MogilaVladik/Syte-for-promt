@@ -1,6 +1,7 @@
 "use client";
 
 import Icon from "./ui/Icon";
+import ImageWithFallback from "./ui/ImageWithFallback";
 import {
   TELEGRAM_URL,
   PRICE_EARLY,
@@ -97,18 +98,24 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* Right: Animated Bulldog */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[32rem] lg:h-[32rem]">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 animate-float">
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-[#E50914]/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src="/images/bulldog-sticker-glasses.png?v=2"
+                    <ImageWithFallback
+                      src="/images/bulldog-hero.webp"
                       alt="Голубой французский бульдог"
-                      className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-float"
-                      loading="eager"
-                      decoding="async"
+                      fill
+                      priority
+                      className="object-contain opacity-90"
+                      fallback={
+                        <div className="text-9xl sm:text-[10rem] lg:text-[12rem] opacity-90">
+                          🐶
+                        </div>
+                      }
                     />
                   </div>
                 </div>
