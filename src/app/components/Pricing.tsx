@@ -14,7 +14,7 @@ import Button from "./ui/Button";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-gradient-to-b from-[#080808] to-[#1a1a1a] relative overflow-hidden">
+    <section id="pricing" className="py-16 sm:py-24 bg-gradient-to-b from-[#080808] to-[#1a1a1a] relative">
       {/* Декор фона (как было) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#E50914] rounded-full blur-3xl" />
@@ -26,7 +26,7 @@ export default function Pricing() {
             src="/images/bulldog-4.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-10 right-2 sm:right-10 w-40 sm:w-48 lg:w-60 opacity-90"
+            className="pointer-events-none absolute bottom-6 right-4 sm:right-10 w-44 sm:w-56 lg:w-72 opacity-90"
             loading="lazy"
             decoding="async"
           />

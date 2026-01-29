@@ -39,13 +39,13 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-16 sm:py-24 bg-gradient-to-b from-[#1a1a1a] to-[#0B0B0B] relative overflow-hidden"
+      className="py-16 sm:py-24 bg-gradient-to-b from-[#1a1a1a] to-[#0B0B0B] relative"
     >
       <img
         src="/images/bulldog-3.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -top-6 right-2 sm:right-8 w-36 sm:w-44 lg:w-56 opacity-90"
+        className="pointer-events-none absolute top-6 right-4 sm:right-8 w-40 sm:w-48 lg:w-64 opacity-90"
         loading="lazy"
         decoding="async"
       />
