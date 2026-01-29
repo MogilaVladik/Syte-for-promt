@@ -43,6 +43,14 @@ export default function FAQ() {
               Напишите нам
             </a>
           </p>
+          <img
+            src="/images/bulldog-hero.png"
+            alt=""
+            aria-hidden="true"
+            className="mx-auto mt-6 w-24 sm:w-28 opacity-90"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         {/* FAQ Accordion */}

@@ -30,6 +30,14 @@ export default function Pricing() {
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
             Оплата за весь курс
           </p>
+          <img
+            src="/images/bulldog-hero.png"
+            alt=""
+            aria-hidden="true"
+            className="mx-auto mt-6 w-24 sm:w-28 opacity-90"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         {/* Карточка цены — БЕЗ «раннего бронирования», БЕЗ «до …», БЕЗ жёлтой плашки */}

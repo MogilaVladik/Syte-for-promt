@@ -51,6 +51,14 @@ export default function Testimonials() {
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
             Что говорят выпускники и какие проекты собрали на курсе
           </p>
+          <img
+            src="/images/bulldog-hero.png"
+            alt=""
+            aria-hidden="true"
+            className="mx-auto mt-6 w-24 sm:w-28 opacity-90"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         {/* Testimonials Slider */}
