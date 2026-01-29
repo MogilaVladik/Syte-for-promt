@@ -17,10 +17,18 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="py-16 sm:py-24 bg-gradient-to-b from-[#0B0B0B] to-[#1a1a1a]"
+      className="py-16 sm:py-24 bg-gradient-to-b from-[#0B0B0B] to-[#1a1a1a] relative overflow-hidden"
     >
+      <img
+        src="/images/bulldog-5.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-12 left-2 sm:left-10 w-40 sm:w-48 lg:w-60 opacity-90"
+        loading="lazy"
+        decoding="async"
+      />
       <div
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative"
       >
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -43,14 +51,6 @@ export default function FAQ() {
               Напишите нам
             </a>
           </p>
-          <img
-            src="/images/bulldog-hero.png"
-            alt=""
-            aria-hidden="true"
-            className="mx-auto mt-6 w-24 sm:w-28 opacity-90"
-            loading="lazy"
-            decoding="async"
-          />
         </div>
 
         {/* FAQ Accordion */}

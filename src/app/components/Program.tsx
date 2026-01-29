@@ -128,7 +128,7 @@ export default function Program() {
             className="hidden lg:flex justify-center items-center"
           >
             <div
-              className="relative w-80 h-80 xl:w-96 xl:h-96"
+              className="relative w-96 h-96 xl:w-[32rem] xl:h-[32rem]"
             >
               <div
                 className="absolute inset-0 animate-typing"
@@ -140,7 +140,7 @@ export default function Program() {
 
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
-                      src="/images/bulldog-coder.png"
+                      src="/images/bulldog-2.png"
                       alt="Мультяшный французский бульдог за ноутбуком"
                       className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-typing"
                       loading="lazy"

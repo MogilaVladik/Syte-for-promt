@@ -21,7 +21,15 @@ export default function Pricing() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#E50914] rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <img
+            src="/images/bulldog-4.png"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-10 right-2 sm:right-10 w-40 sm:w-48 lg:w-60 opacity-90"
+            loading="lazy"
+            decoding="async"
+          />
         {/* Заголовок */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -30,14 +38,6 @@ export default function Pricing() {
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
             Оплата за весь курс
           </p>
-          <img
-            src="/images/bulldog-hero.png"
-            alt=""
-            aria-hidden="true"
-            className="mx-auto mt-6 w-24 sm:w-28 opacity-90"
-            loading="lazy"
-            decoding="async"
-          />
         </div>
 
         {/* Карточка цены — БЕЗ «раннего бронирования», БЕЗ «до …», БЕЗ жёлтой плашки */}

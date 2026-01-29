@@ -39,8 +39,16 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-16 sm:py-24 bg-gradient-to-b from-[#1a1a1a] to-[#0B0B0B]"
+      className="py-16 sm:py-24 bg-gradient-to-b from-[#1a1a1a] to-[#0B0B0B] relative overflow-hidden"
     >
+      <img
+        src="/images/bulldog-3.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-6 right-2 sm:right-8 w-36 sm:w-44 lg:w-56 opacity-90"
+        loading="lazy"
+        decoding="async"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -51,14 +59,6 @@ export default function Testimonials() {
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
             Что говорят выпускники и какие проекты собрали на курсе
           </p>
-          <img
-            src="/images/bulldog-hero.png"
-            alt=""
-            aria-hidden="true"
-            className="mx-auto mt-6 w-24 sm:w-28 opacity-90"
-            loading="lazy"
-            decoding="async"
-          />
         </div>
 
         {/* Testimonials Slider */}

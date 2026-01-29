@@ -99,13 +99,13 @@ export default function Hero() {
 
           {/* Right: Animated Bulldog */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[32rem] lg:h-[32rem]">
               <div className="absolute inset-0 animate-float">
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-[#E50914]/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
-                      src="/images/bulldog-hero.png"
+                      src="/images/bulldog-1.png"
                       alt="Мультяшный французский бульдог"
                       className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-float"
                       loading="eager"
