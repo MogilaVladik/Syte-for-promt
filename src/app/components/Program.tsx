@@ -140,8 +140,8 @@ export default function Program() {
 
                   <div className="absolute inset-0 flex items-center justify-center">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Blue_fawn_french_bulldog.jpg/500px-Blue_fawn_french_bulldog.jpg"
-                      alt="Французский бульдог"
+                      src="/images/bulldog-coder.svg"
+                      alt="Мультяшный французский бульдог за ноутбуком"
                       className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-typing"
                       loading="lazy"
                       decoding="async"
