@@ -33,18 +33,20 @@ export default function Page() {
         <ScrollToTop />
 
       {/* Ссылка на оферту в самом конце страницы */}
-      <section className="mt-6 sm:mt-8 border-t border-white/10 pt-6 pb-8 bg-gradient-to-b from-[#0B0B0B] to-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end">
-            <Link
-              href="/offer"
-              className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
-            >
-              Договор-оферта
-            </Link>
+      <div className="bg-gradient-to-b from-[#0B0B0B] to-[#1a1a1a] pt-6 sm:pt-8">
+        <section className="border-t border-white/10 pt-6 pb-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-end">
+              <Link
+                href="/offer"
+                className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
+              >
+                Договор-оферта
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       </div>
     </>
   );
