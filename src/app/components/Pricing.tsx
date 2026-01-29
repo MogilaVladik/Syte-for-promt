@@ -88,12 +88,12 @@ export default function Pricing() {
                   )}
                 </ul>
 
-                {/* Примечание про подписки оставляем как есть */}
+                {/* Примечание про подписку */}
                 <div className="mt-6 bg-gradient-to-r from-[#E50914]/20 to-transparent border border-[#E50914] p-4 rounded-xl">
                   <p className="text-sm text-gray-300">
                     <span className="font-bold text-white">Важно:</span>{" "}
-                    Подписки на Cursor Pro ($20/мес) и Onlook ($15/мес) уже включены
-                    в стоимость — экономия ~ $70!
+                    Подписка на Onlook ($15/мес) уже включена
+                    в стоимость — экономия ~ $15!
                   </p>
                 </div>
               </div>

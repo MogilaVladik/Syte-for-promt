@@ -64,7 +64,7 @@ export default function Hero() {
                 После {EARLY_BIRD_DEADLINE} — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
               </p>
               <p className="text-xs sm:text-sm text-gray-400 max-w-xs mb-3">
-                Включены подписки на Cursor и Onlook на время курса
+                Включена подписка на Onlook на время курса
               </p>
 
               {/* CTA Button */}
