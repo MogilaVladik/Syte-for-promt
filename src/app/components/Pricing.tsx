@@ -60,11 +60,8 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <div className="text-sm text-gray-300 mb-2">
+                <div className="text-sm text-gray-300 mb-4">
                   После {EARLY_BIRD_DEADLINE} — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
-                </div>
-                <div className="text-sm text-gray-500 mb-4">
-                  ~{PRICE_PER_LESSON.toLocaleString("ru-RU")} ₽ за занятие
                 </div>
 
                 {/* Кнопка без ограничений по дате и без «спеццена до …» */}
