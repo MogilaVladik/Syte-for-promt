@@ -69,23 +69,47 @@ export default function Program() {
                       </p>
 
                       {/* Topics List */}
-                      <ul className="space-y-2">
-                        {lesson.topics.map((topic, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-start gap-3 text-gray-300"
-                          >
-                            <Icon
-                              name="check"
-                              className="w-5 h-5 text-[#E50914] flex-shrink-0 mt-0.5"
-                            />
-                            <span
-                              className="text-sm sm:text-base"
+                      <ul className="space-y-3">
+                        {lesson.topics.map((topic, idx) => {
+                          const isResult = topic.startsWith("Результат:");
+                          const isPractice = topic.startsWith("Практика:");
+                          const label = isResult ? "Результат" : isPractice ? "Практика" : null;
+                          const text = label ? topic.replace(`${label}:`, "").trim() : topic;
+
+                          return (
+                            <li
+                              key={idx}
+                              className={`flex items-start gap-3 ${
+                                label ? "rounded-2xl border border-white/10 bg-white/5 p-3" : "text-gray-300"
+                              }`}
                             >
-                              {topic}
-                            </span>
-                          </li>
-                        ))}
+                              <Icon
+                                name={label ? "star" : "check"}
+                                className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                                  isResult ? "text-amber-400" : isPractice ? "text-emerald-400" : "text-[#E50914]"
+                                }`}
+                              />
+                              <span className="text-sm sm:text-base text-gray-300">
+                                {label ? (
+                                  <>
+                                    <span
+                                      className={`mr-2 rounded-full px-2 py-0.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide ${
+                                        isResult
+                                          ? "bg-amber-400/15 text-amber-300 border border-amber-400/30"
+                                          : "bg-emerald-400/15 text-emerald-300 border border-emerald-400/30"
+                                      }`}
+                                    >
+                                      {label}
+                                    </span>
+                                    {text}
+                                  </>
+                                ) : (
+                                  topic
+                                )}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
