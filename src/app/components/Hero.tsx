@@ -46,9 +46,6 @@ export default function Hero() {
 
             {/* Price Block */}
             <div className="w-full max-w-md sm:max-w-lg bg-black p-6 sm:p-8 rounded-3xl shadow-2xl animate-fade-in-up [animation-delay:400ms] border-2 border-[#E50914]/30 relative mx-auto lg:mx-0">
-              <div className="mb-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E50914]/15 border border-[#E50914]/40 text-[#E50914] text-xs sm:text-sm font-semibold uppercase tracking-wide animate-pulse">
-                До {EARLY_BIRD_DEADLINE} — {PRICE_EARLY.toLocaleString("ru-RU")} ₽
-              </div>
               {/* Price (без зачёркнутой старой и без «раннего бронирования») */}
               <div className="flex items-baseline gap-3 sm:gap-4 mb-3 justify-center lg:justify-start">
                 <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
@@ -78,8 +75,13 @@ export default function Hero() {
                 </a>
               </div>
 
+              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-semibold uppercase tracking-wide animate-pulse">
+                <span aria-hidden>🔥</span>
+                До {EARLY_BIRD_DEADLINE} — {PRICE_EARLY.toLocaleString("ru-RU")} ₽
+              </div>
+
               {/* Trust badges */}
-              <div className="flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start text-sm sm:text-base text-gray-300 animate-fade-in-up [animation-delay:600ms]">
+              <div className="mt-6 flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start text-sm sm:text-base text-gray-300 animate-fade-in-up [animation-delay:600ms]">
                 <div className="flex items-center gap-2">
                   <Icon name="check" className="w-5 h-5 text-[#E50914]" />
                   <span>Онлайн</span>
