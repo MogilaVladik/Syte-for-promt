@@ -1,9 +1,37 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { testimonials } from "@/data/testimonials";
 import Icon from "./ui/Icon";
 
 export default function Testimonials() {
+  const itemsPerPage = 3;
+  const pageCount = Math.max(1, Math.ceil(testimonials.length / itemsPerPage));
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    const handleScroll = () => {
+      const width = scroller.clientWidth || 1;
+      const nextPage = Math.round(scroller.scrollLeft / width);
+      setPage(Math.min(Math.max(nextPage, 0), pageCount - 1));
+    };
+
+    handleScroll();
+    scroller.addEventListener("scroll", handleScroll, { passive: true });
+    return () => scroller.removeEventListener("scroll", handleScroll);
+  }, [pageCount]);
+
+  const scrollToPage = (nextPage: number) => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const width = scroller.clientWidth || 0;
+    scroller.scrollTo({ left: width * nextPage, behavior: "smooth" });
+  };
+
   return (
     <section
       id="testimonials"
@@ -21,12 +49,15 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Testimonials Slider */}
+        <div
+          ref={scrollerRef}
+          className="flex gap-6 lg:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
+        >
           {testimonials.map((t, i) => (
             <div
               key={`testimonial-${t.name}-${i}`}
-              className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col"
+              className="snap-start shrink-0 basis-full w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-[#E50914]/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#E50914]/10 flex flex-col"
             >
               <div className="text-4xl text-[#E50914] mb-4">"</div>
               <p className="text-gray-300 text-base sm:text-lg mb-4 leading-relaxed flex-1">
@@ -61,6 +92,44 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
+
+        {/* Pagination */}
+        {pageCount > 1 ? (
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => scrollToPage(Math.max(page - 1, 0))}
+              className="px-3 py-2 rounded-full border border-white/10 text-white/70 hover:text-white hover:border-white/30 disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Предыдущая страница"
+              disabled={page === 0}
+            >
+              ←
+            </button>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: pageCount }).map((_, index) => (
+                <button
+                  key={`testimonial-page-${index}`}
+                  type="button"
+                  onClick={() => scrollToPage(index)}
+                  className={`h-2.5 w-2.5 rounded-full transition-all ${
+                    page === index ? "bg-[#E50914] w-6" : "bg-white/30 hover:bg-white/60"
+                  }`}
+                  aria-label={`Страница ${index + 1}`}
+                  aria-current={page === index ? "true" : undefined}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => scrollToPage(Math.min(page + 1, pageCount - 1))}
+              className="px-3 py-2 rounded-full border border-white/10 text-white/70 hover:text-white hover:border-white/30 disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Следующая страница"
+              disabled={page === pageCount - 1}
+            >
+              →
+            </button>
+          </div>
+        ) : null}
 
         {/* CTA */}
         <div className="mt-12 sm:mt-16 text-center">
