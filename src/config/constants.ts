@@ -8,13 +8,16 @@ export const COLOR_BACKGROUND = "#0B0B0B";
 export const COLOR_FOREGROUND = "#ededed";
 
 // Prices
-export const PRICE_REGULAR = 40000;
+export const PRICE_EARLY = 35000;
+export const PRICE_REGULAR = 42000;
 export const PRICE_VIP = 100000;
 export const PRICE_PER_LESSON = Math.round(PRICE_REGULAR / 4);
 
 // Dates
 export const COURSE_START_DATE = "11 марта 2026";
 export const COURSE_START_DATE_ISO = "2026-03-11";
+export const EARLY_BIRD_DEADLINE = "21 февраля";
+export const EARLY_BIRD_DEADLINE_ISO = "2026-02-21";
 
 // Course details
 export const LESSON_COUNT = 4;

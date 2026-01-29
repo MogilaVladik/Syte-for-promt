@@ -1,7 +1,13 @@
 "use client";
 
 import Icon from "./ui/Icon";
-import { TELEGRAM_URL, PRICE_REGULAR, PRICE_PER_LESSON, COURSE_START_DATE } from "@/config/constants";
+import {
+  TELEGRAM_URL,
+  PRICE_EARLY,
+  PRICE_REGULAR,
+  EARLY_BIRD_DEADLINE,
+  COURSE_START_DATE,
+} from "@/config/constants";
 
 export default function Hero() {
   return (
@@ -39,14 +45,23 @@ export default function Hero() {
             </p>
 
             {/* Price Block */}
-            <div className="inline-block bg-black p-6 sm:p-8 rounded-3xl shadow-2xl animate-fade-in-up [animation-delay:400ms] border-2 border-[#E50914]/30 relative">
+            <div className="w-full max-w-md sm:max-w-lg bg-black p-6 sm:p-8 rounded-3xl shadow-2xl animate-fade-in-up [animation-delay:400ms] border-2 border-[#E50914]/30 relative mx-auto lg:mx-0">
+              <div className="mb-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E50914]/15 border border-[#E50914]/40 text-[#E50914] text-xs sm:text-sm font-semibold uppercase tracking-wide animate-pulse">
+                До {EARLY_BIRD_DEADLINE} — {PRICE_EARLY.toLocaleString("ru-RU")} ₽
+              </div>
               {/* Price (без зачёркнутой старой и без «раннего бронирования») */}
               <div className="flex items-baseline gap-3 sm:gap-4 mb-3 justify-center lg:justify-start">
                 <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
+                  {PRICE_EARLY.toLocaleString("ru-RU")} ₽
+                </div>
+                <div className="text-base sm:text-lg text-gray-500 line-through">
                   {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
                 </div>
               </div>
 
+              <p className="text-xs sm:text-sm text-gray-300 max-w-xs mb-2">
+                После {EARLY_BIRD_DEADLINE} — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
+              </p>
               <p className="text-xs sm:text-sm text-gray-400 max-w-xs mb-3">
                 Включены подписки на Cursor и Onlook на время курса
               </p>
@@ -59,7 +74,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="px-8 py-4 bg-[#E50914] hover:bg-[#c20712] text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:shadow-[#E50914]/50 hover:scale-105"
                 >
-                  Записаться за {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
+                  Записаться за {PRICE_EARLY.toLocaleString("ru-RU")} ₽
                 </a>
               </div>
 
