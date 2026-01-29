@@ -1,4 +1,4 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C;LBOH=K9 D@0=FC7A:89 1C;L4>3">
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" >
   <g filter="url(#shadow)">
     <path d="M112 210C112 131 174 80 256 80C338 80 400 131 400 210V330C400 378 361 416 312 416H200C151 416 112 378 112 330V210Z" fill="#C6D2E1"/>
     <path d="M130 168C118 138 129 104 165 100C173 99 181 101 188 105L210 118C220 123 226 134 225 145L222 170C218 195 156 196 130 168Z" fill="#9FB1C6"/>
