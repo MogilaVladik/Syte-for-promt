@@ -12,9 +12,8 @@ export default function ScrollToTop() {
       setIsVisible(window.scrollY > SCROLL_TO_TOP_THRESHOLD);
     };
 
-    const listenerOptions = { passive: true };
-    window.addEventListener("scroll", toggleVisibility, listenerOptions);
-    return () => window.removeEventListener("scroll", toggleVisibility, listenerOptions);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
