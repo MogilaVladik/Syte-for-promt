@@ -123,34 +123,7 @@ export default function Program() {
             </div>
           </div>
 
-          {/* Right: Animated Bulldog Coder */}
-          <div
-            className="hidden lg:flex justify-center items-center"
-          >
-            <div
-              className="relative w-96 h-96 xl:w-[32rem] xl:h-[32rem]"
-            >
-              <div
-                className="absolute inset-0 animate-typing"
-              >
-                <div className="relative w-full h-full">
-                  <div
-                    className="absolute inset-0 bg-[#E50914]/10 blur-3xl rounded-full"
-                  />
-
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src="/images/bulldog-2.png?v=2"
-                      alt="Мультяшный французский бульдог за ноутбуком"
-                      className="w-full h-full object-contain opacity-95 drop-shadow-2xl animate-typing"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Right: Image removed per request */}
         </div>
       </div>
     </section>

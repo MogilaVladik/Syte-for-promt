@@ -22,14 +22,6 @@ export default function Pricing() {
       </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <img
-            src="/images/bulldog-4.png?v=2"
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-6 right-4 sm:right-10 w-44 sm:w-56 lg:w-72 opacity-90"
-            loading="lazy"
-            decoding="async"
-          />
         {/* Заголовок */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
