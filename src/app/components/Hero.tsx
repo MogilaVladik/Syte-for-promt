@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Icon from "./ui/Icon";
 import ImageWithFallback from "./ui/ImageWithFallback";
 import {
@@ -7,10 +8,37 @@ import {
   PRICE_EARLY,
   PRICE_REGULAR,
   EARLY_BIRD_DEADLINE,
+  EARLY_BIRD_DEADLINE_ISO,
   COURSE_START_DATE,
 } from "@/config/constants";
 
 export default function Hero() {
+  const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    const deadline = new Date(`${EARLY_BIRD_DEADLINE_ISO}T23:59:59+03:00`).getTime();
+
+    const format = (ms: number) => {
+      if (ms <= 0) return "";
+      const totalSeconds = Math.floor(ms / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      const pad = (n: number) => String(n).padStart(2, "0");
+      return `${days}д ${pad(hours)}ч ${pad(minutes)}м ${pad(seconds)}с`;
+    };
+
+    const tick = () => {
+      const diff = deadline - Date.now();
+      setTimeLeft(format(diff));
+    };
+
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -51,6 +79,15 @@ export default function Hero() {
                 <span aria-hidden>🔥</span>
                 До {EARLY_BIRD_DEADLINE} — {PRICE_EARLY.toLocaleString("ru-RU")} ₽
               </div>
+              {timeLeft ? (
+                <div className="mb-3 text-xs sm:text-sm text-amber-200/90">
+                  До конца скидки: <span className="font-semibold">{timeLeft}</span>
+                </div>
+              ) : (
+                <div className="mb-3 text-xs sm:text-sm text-gray-400">
+                  Скидка завершилась
+                </div>
+              )}
               {/* Price (без зачёркнутой старой и без «раннего бронирования») */}
               <div className="flex items-baseline gap-3 sm:gap-4 mb-3 justify-center lg:justify-start">
                 <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
