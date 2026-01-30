@@ -70,7 +70,7 @@ export default function Program() {
                       </p>
 
                       {/* Topics List */}
-                      <ul className="space-y-3 sm:text-left">
+                      <ul className="space-y-3 text-left">
                         {lesson.topics.map((topic, idx) => {
                           const isResult = topic.startsWith("Результат:");
                           const isPractice = topic.startsWith("Практика:");
@@ -80,7 +80,7 @@ export default function Program() {
                           return (
                             <li
                               key={idx}
-                              className={`flex items-start sm:items-start sm:justify-start justify-center gap-3 ${
+                              className={`flex items-start justify-start gap-3 ${
                                 label ? "rounded-2xl border border-white/10 bg-white/5 p-3" : "text-gray-300"
                               }`}
                             >
@@ -90,7 +90,7 @@ export default function Program() {
                                   isResult ? "text-amber-400" : isPractice ? "text-emerald-400" : "text-[#E50914]"
                                 }`}
                               />
-                              <span className="text-sm sm:text-base text-gray-300 text-center sm:text-left">
+                              <span className="text-sm sm:text-base text-gray-300">
                                 {label ? (
                                   <>
                                     <span
