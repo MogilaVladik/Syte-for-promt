@@ -47,7 +47,7 @@ export default function Program() {
                     className="p-6 sm:p-8"
                   >
                   <div
-                    className="flex items-start gap-4 sm:gap-6"
+                    className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left"
                   >
                     {/* Number Badge */}
                     <div
@@ -70,7 +70,7 @@ export default function Program() {
                       </p>
 
                       {/* Topics List */}
-                      <ul className="space-y-3">
+                      <ul className="space-y-3 sm:text-left">
                         {lesson.topics.map((topic, idx) => {
                           const isResult = topic.startsWith("Результат:");
                           const isPractice = topic.startsWith("Практика:");
@@ -80,7 +80,7 @@ export default function Program() {
                           return (
                             <li
                               key={idx}
-                              className={`flex items-start gap-3 ${
+                              className={`flex items-start sm:items-start sm:justify-start justify-center gap-3 ${
                                 label ? "rounded-2xl border border-white/10 bg-white/5 p-3" : "text-gray-300"
                               }`}
                             >
@@ -90,7 +90,7 @@ export default function Program() {
                                   isResult ? "text-amber-400" : isPractice ? "text-emerald-400" : "text-[#E50914]"
                                 }`}
                               />
-                              <span className="text-sm sm:text-base text-gray-300">
+                              <span className="text-sm sm:text-base text-gray-300 text-center sm:text-left">
                                 {label ? (
                                   <>
                                     <span
