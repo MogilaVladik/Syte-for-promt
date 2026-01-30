@@ -66,9 +66,11 @@ export default function VIPSupport() {
               className="absolute -top-6 left-1/2 -translate-x-1/2"
             >
               <div
-                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-8 py-3 rounded-full text-lg font-black shadow-lg"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-8 py-3 rounded-full text-lg font-black shadow-lg flex items-center justify-center gap-2 text-center"
               >
-                ⭐ VIP ПАКЕТ ⭐
+                <span aria-hidden>★</span>
+                <span>VIP ПАКЕТ</span>
+                <span aria-hidden>★</span>
               </div>
             </div>
 
