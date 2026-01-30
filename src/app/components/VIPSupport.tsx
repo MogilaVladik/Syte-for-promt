@@ -32,7 +32,7 @@ export default function VIPSupport() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div
-            className="inline-flex items-center gap-2 mb-4"
+            className="inline-flex items-center justify-center gap-2 mb-4 w-full"
           >
             <Icon
               name="star"
