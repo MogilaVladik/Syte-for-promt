@@ -1,18 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { testimonials } from "@/data/testimonials";
 import Icon from "./ui/Icon";
 
 export default function Testimonials() {
-  const itemsPerPage = 3;
-  const pages = Array.from(
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const pages = useMemo(() => Array.from(
     { length: Math.max(1, Math.ceil(testimonials.length / itemsPerPage)) },
     (_, index) => testimonials.slice(index * itemsPerPage, index * itemsPerPage + itemsPerPage),
-  );
+  ), [itemsPerPage]);
   const pageCount = pages.length;
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    const update = () => {
+      setItemsPerPage(window.innerWidth < 640 ? 1 : 3);
+    };
+    update();
+    window.addEventListener("resize", update, { passive: true });
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   useEffect(() => {
     const scroller = scrollerRef.current;
