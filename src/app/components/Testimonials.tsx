@@ -100,7 +100,7 @@ export default function Testimonials() {
                           <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden>→</span>
                         </a>
                         <div className="text-xs text-gray-500">
-                          Для просмотра проекта нужен VPN
+                          Если не открывается — включите VPN
                         </div>
                       </div>
                     )}
