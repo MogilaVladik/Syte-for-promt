@@ -1,17 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Script from "next/script";
 import { FORMSPREE_FORM_ID } from "@/config/constants";
+
+const TURNSTILE_SCRIPT = "https://challenges.cloudflare.com/turnstile/v0/api.js";
 
 export default function LeadForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [telegram, setTelegram] = useState("");
+  const [honeypot, setHoneypot] = useState(""); // скрытое поле: если заполнено — бот, не отправляем
   const [agreePolicy, setAgreePolicy] = useState(false);
   const [agreeProcessing, setAgreeProcessing] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileKey, setTurnstileKey] = useState(0);
+
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || FORMSPREE_FORM_ID;
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
+  const captchaRequired = Boolean(turnstileSiteKey);
 
   const canSubmit =
     name.trim() &&
@@ -19,12 +29,24 @@ export default function LeadForm() {
     telegram.trim() &&
     agreePolicy &&
     agreeProcessing &&
+    (!captchaRequired || turnstileToken) &&
     status !== "sending";
 
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || FORMSPREE_FORM_ID;
+  const onTurnstileSuccess = useCallback((token: string) => {
+    setTurnstileToken(token);
+  }, []);
+
+  useEffect(() => {
+    if (!turnstileSiteKey) return;
+    (window as unknown as { onTurnstileSuccess?: (token: string) => void }).onTurnstileSuccess = onTurnstileSuccess;
+    return () => {
+      delete (window as unknown as { onTurnstileSuccess?: (token: string) => void }).onTurnstileSuccess;
+    };
+  }, [turnstileSiteKey, onTurnstileSuccess]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (honeypot.trim()) return; // бот заполнил скрытое поле — не отправляем и ничего не показываем
     if (!canSubmit) return;
     if (!formspreeId) {
       setStatus("error");
@@ -34,15 +56,18 @@ export default function LeadForm() {
     setStatus("sending");
     setErrorMessage("");
     try {
+      const body: Record<string, string> = {
+        name: name.trim(),
+        phone: phone.trim(),
+        telegram: telegram.trim(),
+        _subject: "Заявка с сайта",
+      };
+      if (turnstileToken) body["cf-turnstile-response"] = turnstileToken;
+
       const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          phone: phone.trim(),
-          telegram: telegram.trim(),
-          _subject: "Заявка с сайта",
-        }),
+        body: JSON.stringify(body),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -56,6 +81,8 @@ export default function LeadForm() {
       setTelegram("");
       setAgreePolicy(false);
       setAgreeProcessing(false);
+      setTurnstileToken("");
+      if (captchaRequired) setTurnstileKey((k) => k + 1);
     } catch {
       setStatus("error");
       setErrorMessage("Ошибка сети. Попробуйте позже или напишите в Telegram.");
@@ -84,6 +111,20 @@ export default function LeadForm() {
           onSubmit={handleSubmit}
           className="bg-black/50 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl"
         >
+          {/* Скрытое поле от ботов: люди его не видят и не заполняют, боты часто заполняют всё подряд */}
+            <div className="absolute -left-[9999px] w-0 h-0 overflow-hidden" aria-hidden="true">
+              <label htmlFor="lead-website">Не заполняйте</label>
+              <input
+                id="lead-website"
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
           <div className="space-y-4 mb-6">
             <label className="block">
               <span className="text-sm text-gray-400 mb-1 block">Имя</span>
@@ -161,6 +202,19 @@ export default function LeadForm() {
               </span>
             </label>
           </div>
+
+          {turnstileSiteKey && (
+            <>
+              <Script src={TURNSTILE_SCRIPT} strategy="lazyOnload" />
+              <div
+                key={turnstileKey}
+                className="cf-turnstile mb-6 [&_iframe]:max-w-full"
+                data-sitekey={turnstileSiteKey}
+                data-callback="onTurnstileSuccess"
+                data-theme="dark"
+              />
+            </>
+          )}
 
           {status === "success" && (
             <div className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
