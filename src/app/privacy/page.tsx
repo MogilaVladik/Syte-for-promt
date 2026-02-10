@@ -17,16 +17,16 @@ function PrivacyContent() {
       >
         <Link
           href={backHref}
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-body text-gray-400 hover:text-white transition-colors mb-8"
         >
           ← На главную
         </Link>
 
-        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+        <h1 className="text-heading font-bold text-white mb-6">
           Политика конфиденциальности и согласие на обработку персональных данных
         </h1>
 
-        <p className="text-sm text-gray-400 mb-8">
+        <p className="text-body text-gray-400 mb-8">
           г. Москва, 2026
           <br />
           Оператор: Могильников Владислав Дмитриевич, ИНН 352832307870, самозанятый (НПД).
@@ -39,7 +39,7 @@ function PrivacyContent() {
         <section className="space-y-6 leading-relaxed">
           {/* === ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ === */}
           <div id="politika">
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="text-lead font-semibold text-white mb-4">
               I. Политика конфиденциальности
             </h2>
 
@@ -138,7 +138,7 @@ function PrivacyContent() {
 
           {/* === СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ === */}
           <div id="soglasie" className="pt-8 border-t border-white/10">
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="text-lead font-semibold text-white mb-4">
               II. Согласие на обработку персональных данных
             </h2>
 
@@ -217,13 +217,13 @@ function PrivacyContent() {
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href={backHref}
-            className="text-gray-400 hover:text-white transition-colors text-sm"
+            className="text-gray-400 hover:text-white transition-colors text-body"
           >
             ← На главную
           </Link>
           <Link
             href="/offer"
-            className="text-gray-400 hover:text-white transition-colors text-sm"
+            className="text-gray-400 hover:text-white transition-colors text-body"
           >
             Договор-оферта
           </Link>

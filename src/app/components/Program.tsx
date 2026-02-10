@@ -23,15 +23,15 @@ export default function Program() {
             {/* Header */}
             <div className="mb-12">
               <h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
+                className="text-heading font-bold text-white mb-4"
               >
                 Программа{" "}
-                <span className="text-[#E50914]">
+                <span className="text-red-primary">
                   курса
                 </span>
               </h2>
               <p
-                className="text-lg sm:text-xl text-gray-400"
+                className="text-lead text-gray-400"
               >
                 4 последовательных занятия — от теории к готовому проекту
               </p>
@@ -51,7 +51,7 @@ export default function Program() {
                   >
                     {/* Number Badge */}
                     <div
-                      className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-[#E50914] rounded-2xl flex items-center justify-center text-xl sm:text-2xl font-bold text-white"
+                      className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-red-primary rounded-2xl flex items-center justify-center text-lead font-bold text-white"
                     >
                       {lesson.number}
                     </div>
@@ -59,12 +59,12 @@ export default function Program() {
                     {/* Content */}
                     <div className="flex-1">
                       <h3
-                        className="text-xl sm:text-2xl font-bold text-white mb-2"
+                        className="text-lead font-bold text-white mb-2"
                       >
                         {lesson.title}
                       </h3>
                       <p
-                        className="text-sm sm:text-base text-gray-400 mb-4"
+                        className="text-body text-gray-400 mb-4"
                       >
                         {lesson.duration}
                       </p>
@@ -87,14 +87,14 @@ export default function Program() {
                               <Icon
                                 name={label ? "star" : "check"}
                                 className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                                  isResult ? "text-amber-400" : isPractice ? "text-emerald-400" : "text-[#E50914]"
+                                  isResult ? "text-amber-400" : isPractice ? "text-emerald-400" : "text-red-primary"
                                 }`}
                               />
-                              <span className="text-sm sm:text-base text-gray-300">
+                              <span className="text-body text-gray-300">
                                 {label ? (
                                   <>
                                     <span
-                                      className={`mr-2 rounded-full px-2 py-0.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide ${
+                                      className={`mr-2 rounded-full px-2 py-0.5 text-caption font-semibold uppercase tracking-wide ${
                                         isResult
                                           ? "bg-amber-400/15 text-amber-300 border border-amber-400/30"
                                           : "bg-emerald-400/15 text-emerald-300 border border-emerald-400/30"
@@ -136,7 +136,7 @@ export default function Program() {
               >
                 <div className="relative w-full h-full">
                   <div
-                    className="absolute inset-0 bg-[#E50914]/10 blur-3xl rounded-full"
+                    className="absolute inset-0 bg-red-primary/10 blur-3xl rounded-full"
                   />
 
                   <div className="absolute inset-0 flex items-center justify-center">

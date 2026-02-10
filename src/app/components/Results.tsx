@@ -10,16 +10,16 @@ export default function Results() {
       {/* Header */}
       <div className="text-center mb-12 sm:mb-16">
         <h2
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
+          className="text-heading font-bold text-white mb-4"
         >
           Что вы{" "}
-          <span className="text-[#E50914]">
+          <span className="text-red-primary">
             сделаете
           </span>{" "}
           за курс
         </h2>
         <p
-          className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto"
+          className="text-lead text-gray-400 max-w-2xl mx-auto"
         >
           Конкретные результаты, которые вы получите после 4 занятий
         </p>
@@ -46,7 +46,7 @@ export default function Results() {
               </div>
 
               <p
-                className="text-sm sm:text-base text-gray-300 font-medium leading-snug"
+                className="text-body text-gray-300 font-medium leading-snug"
               >
                 {result.text}
               </p>
@@ -62,10 +62,10 @@ export default function Results() {
       {/* Additional info */}
       <div className="mt-12 sm:mt-16 text-center">
         <div
-          className="inline-block bg-gradient-to-r from-[#E50914]/10 to-transparent border border-[#E50914]/30 rounded-2xl p-6 sm:p-8 max-w-3xl"
+          className="inline-block bg-gradient-to-r from-red-primary/10 to-transparent border border-red-primary/30 rounded-2xl p-6 sm:p-8 max-w-3xl"
         >
-          <p className="text-base sm:text-lg text-gray-300">
-            <span className="text-[#E50914] font-bold">
+          <p className="text-body text-gray-300">
+            <span className="text-red-primary font-bold">
               Бонус:
             </span>{" "}
             Все участники получают подписку на Onlook на весь

@@ -51,57 +51,56 @@ export default function Hero() {
           {/* Left: Content */}
           <div className="text-center lg:text-left space-y-6 sm:space-y-8 relative z-10">
             {/* Date Badge */}
-            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm sm:text-base">
+            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm rounded-full text-white text-caption">
               <Icon name="calendar" className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Старт {COURSE_START_DATE}
             </div>
 
             {/* H1 */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight animate-fade-in-up">
+            <h1 className="text-heading font-bold text-white leading-tight tracking-tight animate-fade-in-up">
               Курс по промптингу <br />
-              для <span className="text-[#E50914]">менеджеров</span>
+              для <span className="text-red-primary">менеджеров</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-2xl animate-fade-in-up [animation-delay:200ms]">
+            <p className="text-lead text-gray-300 max-w-2xl animate-fade-in-up [animation-delay:200ms]">
               4 практических занятия, на каждом вы продвигаете свой проект от идеи
               до GitLab
             </p>
 
             {/* Lead */}
-            <p className="text-base sm:text-lg text-[#D1D5DB] max-w-xl animate-fade-in-up [animation-delay:300ms]">
+            <p className="text-body text-gray-light max-w-xl animate-fade-in-up [animation-delay:300ms]">
               Соберите свой AI-инструмент за 4 занятия и выложите его в GitLab
             </p>
 
-            {/* Price Block */}
-            <div className="w-full max-w-md sm:max-w-lg bg-black p-6 sm:p-8 rounded-3xl shadow-2xl animate-fade-in-up [animation-delay:400ms] border-2 border-[#E50914]/30 relative mx-auto lg:mx-0">
-              <div className="mb-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-semibold uppercase tracking-wide animate-pulse">
+            {/* Price Block — больше воздуха между элементами */}
+            <div className="w-full max-w-md sm:max-w-lg bg-black p-6 sm:p-8 rounded-3xl shadow-2xl animate-fade-in-up [animation-delay:400ms] border-2 border-red-primary/30 relative mx-auto lg:mx-0 space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 text-caption font-semibold uppercase tracking-wide animate-pulse">
                 <span aria-hidden>🔥</span>
                 До {EARLY_BIRD_DEADLINE} — {PRICE_EARLY.toLocaleString("ru-RU")} ₽
               </div>
               {timeLeft ? (
-                <div className="mb-3 text-xs sm:text-sm text-amber-200/90">
+                <div className="text-caption text-amber-200/90">
                   До конца скидки: <span className="font-semibold">{timeLeft}</span>
                 </div>
               ) : (
-                <div className="mb-3 text-xs sm:text-sm text-gray-400">
+                <div className="text-caption text-gray-400">
                   Скидка завершилась
                 </div>
               )}
-              {/* Price (без зачёркнутой старой и без «раннего бронирования») */}
-              <div className="flex items-baseline gap-3 sm:gap-4 mb-3 justify-center lg:justify-start">
-                <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
+              <div className="flex items-baseline gap-3 sm:gap-4 justify-center lg:justify-start">
+                <div className="text-heading font-bold text-white">
                   {PRICE_EARLY.toLocaleString("ru-RU")} ₽
                 </div>
-                <div className="text-base sm:text-lg text-gray-500 line-through">
+                <div className="text-body text-gray-500 line-through">
                   {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-gray-300 max-w-xs mb-2">
+              <p className="text-caption text-gray-300 max-w-xs">
                 После {EARLY_BIRD_DEADLINE} — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
               </p>
-              <p className="text-xs sm:text-sm text-gray-400 max-w-xs mb-3">
+              <p className="text-caption text-gray-400 max-w-xs">
                 Включена подписка на Onlook на время курса
               </p>
 
@@ -111,24 +110,24 @@ export default function Hero() {
                   href={TELEGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 bg-[#E50914] hover:bg-[#c20712] text-white font-bold text-lg rounded-2xl transition-all shadow-lg hover:shadow-[#E50914]/50 hover:scale-105"
+                  className="px-8 py-4 bg-red-primary hover:bg-[#c20712] text-white font-bold text-lead rounded-2xl transition-all shadow-lg hover:shadow-red-primary/50 hover:scale-105"
                 >
                   Записаться за {PRICE_EARLY.toLocaleString("ru-RU")} ₽
                 </a>
               </div>
 
               {/* Trust badges */}
-              <div className="mt-6 flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start text-sm sm:text-base text-gray-300 animate-fade-in-up [animation-delay:600ms]">
+              <div className="mt-6 flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start text-body text-gray-300 animate-fade-in-up [animation-delay:600ms]">
                 <div className="flex items-center gap-2">
-                  <Icon name="check" className="w-5 h-5 text-[#E50914]" />
+                  <Icon name="check" className="w-5 h-5 text-red-primary" />
                   <span>Онлайн</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Icon name="check" className="w-5 h-5 text-[#E50914]" />
+                  <Icon name="check" className="w-5 h-5 text-red-primary" />
                   <span>4 × 1 час</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Icon name="check" className="w-5 h-5 text-[#E50914]" />
+                  <Icon name="check" className="w-5 h-5 text-red-primary" />
                   <span>Практика 80%</span>
                 </div>
               </div>
@@ -140,7 +139,7 @@ export default function Hero() {
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 animate-float">
                 <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-[#E50914]/20 blur-3xl rounded-full animate-glow" />
+                  <div className="absolute inset-0 bg-red-primary/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <ImageWithFallback
                       src="/images/bulldog-hero.webp"
@@ -162,10 +161,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Scroll indicator — приглушён, отключается при prefers-reduced-motion */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce motion-reduce:animate-none" aria-hidden>
         <svg
-          className="w-6 h-6 text-white/50"
+          className="w-6 h-6 text-white/40"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

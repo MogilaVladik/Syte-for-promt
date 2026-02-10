@@ -95,15 +95,15 @@ export default function OfferPage() {
       >
         <Link
           href="/#footer"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-body text-gray-400 hover:text-white transition-colors mb-8"
         >
           ← На главную
         </Link>
-        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+        <h1 className="text-heading font-bold text-white mb-6">
           Договор-оферта на оказание услуг по обучению
         </h1>
 
-        <p className="text-sm text-gray-400 mb-8">
+        <p className="text-body text-gray-400 mb-8">
           г. Москва, 29.01.2026
           <br />
           Исполнитель: Могильников Владислав Дмитриевич, ИНН 352832307870, самозанятый (НПД).
@@ -246,7 +246,7 @@ export default function OfferPage() {
         </section>
 
         {locked && (
-          <div className="mt-6 text-xs text-red-400">
+          <div className="mt-6 text-caption text-red-400">
             Защита активирована. Закройте инструменты разработчика и обновите страницу.
           </div>
         )}
@@ -254,7 +254,7 @@ export default function OfferPage() {
         <div className="mt-10">
           <Link
             href="/#footer"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-body text-gray-400 hover:text-white transition-colors"
           >
             ← На главную
           </Link>

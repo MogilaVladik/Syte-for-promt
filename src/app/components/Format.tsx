@@ -13,15 +13,15 @@ export default function Format() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-heading font-bold text-white mb-4"
           >
             Формат и{" "}
-            <span className="text-[#E50914]">
+            <span className="text-red-primary">
               расписание
             </span>
           </h2>
           <p
-            className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto"
+            className="text-lead text-gray-400 max-w-2xl mx-auto"
           >
             Удобное время для работающих специалистов
           </p>
@@ -31,7 +31,7 @@ export default function Format() {
           {/* Features */}
           <div>
             <h3
-              className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8"
+              className="text-heading font-bold text-white mb-6 sm:mb-8"
             >
               Что входит
             </h3>
@@ -46,11 +46,11 @@ export default function Format() {
                     {feature.icon}
                   </div>
                   <h4
-                    className="text-lg font-bold text-white mb-2"
+                    className="text-lead font-bold text-white mb-2"
                   >
                     {feature.title}
                   </h4>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-body text-gray-400">
                       {feature.description}
                     </p>
                   </Card>
@@ -66,7 +66,7 @@ export default function Format() {
           {/* Schedule */}
           <div>
             <h3
-              className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8"
+              className="text-heading font-bold text-white mb-6 sm:mb-8"
             >
               Предварительное расписание
             </h3>
@@ -75,14 +75,14 @@ export default function Format() {
                 schedule.map((item: ScheduleItem, index: number) => (
                   <div
                     key={`schedule-${item.date}-${index}`}
-                    className="bg-gradient-to-r from-[#E50914]/10 to-transparent border border-[#E50914]/30 p-6 rounded-2xl hover:border-[#E50914]/50 transition-all"
+                    className="bg-gradient-to-r from-red-primary/10 to-transparent border border-red-primary/30 p-6 rounded-2xl hover:border-red-primary/50 transition-all"
                   >
                     <div
                       className="flex items-center justify-between gap-4"
                     >
                       <div>
                         <div
-                          className="text-2xl font-bold text-white mb-1"
+                          className="text-lead font-bold text-white mb-1"
                         >
                           Занятие {index + 1}
                         </div>
@@ -91,7 +91,7 @@ export default function Format() {
                         </div>
                       </div>
                       <div
-                        className="text-xl font-bold text-[#E50914]"
+                        className="text-lead font-bold text-red-primary"
                       >
                         {item.time}
                       </div>
@@ -108,7 +108,7 @@ export default function Format() {
             {/* Note */}
             <Card hover={false} className="mt-6 p-6">
               <p
-                className="text-sm text-gray-400 leading-relaxed"
+                className="text-body text-gray-400 leading-relaxed"
               >
                 <span className="text-white font-semibold">
                   Примечание:

@@ -28,7 +28,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-4 sm:right-8 z-40 p-3 sm:p-4 bg-[#E50914] hover:bg-[#c20712] text-white rounded-full shadow-lg hover:shadow-[#E50914]/50 transition-all hover:scale-110 active:scale-95"
+      className="fixed bottom-8 right-4 sm:right-8 z-40 p-3 sm:p-4 bg-red-primary hover:bg-red-primary/90 text-white rounded-full shadow-lg hover:shadow-red-primary/50 transition-all hover:scale-110 active:scale-95"
       aria-label="Вернуться наверх"
     >
       <Icon

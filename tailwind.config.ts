@@ -13,9 +13,15 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "red-primary": "#E50914",
-        "gray-warm": "#9CA3AF",
+        "red-primary": "var(--red-primary)",
+        "gray-warm": "#A8B3BF",
         "gray-light": "#D1D5DB",
+      },
+      fontSize: {
+        caption: ["0.875rem", { lineHeight: "1.4" }],
+        body: ["1rem", { lineHeight: "1.6" }],
+        lead: ["1.125rem", { lineHeight: "1.5" }],
+        heading: ["1.5rem", { lineHeight: "1.3" }],
       },
       animation: {
         float: "float 6s ease-in-out infinite",

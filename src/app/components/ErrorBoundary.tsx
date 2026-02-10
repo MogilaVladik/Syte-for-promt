@@ -35,7 +35,7 @@ export class ErrorBoundary extends Component<
         this.props.fallback || (
           <div className="min-h-screen flex items-center justify-center bg-black text-white px-4">
             <div className="text-center max-w-md">
-              <h1 className="text-2xl font-bold mb-4 text-red-500">
+              <h1 className="text-heading font-bold mb-4 text-red-500">
                 Что-то пошло не так
               </h1>
               <p className="text-gray-400 mb-6">

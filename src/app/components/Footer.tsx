@@ -17,16 +17,16 @@ export default function Footer() {
           {/* Logo & Description */}
           <div data-oid="ovrh4w:">
             <h3
-              className="text-2xl font-bold text-white mb-4"
+              className="text-heading font-bold text-white mb-4"
               data-oid="f_y.xsl"
             >
               Промптинг
-              <span className="text-[#E50914]" data-oid="e_8hwuj">
+              <span className="text-red-primary" data-oid="e_8hwuj">
                 .
               </span>
             </h3>
             <p
-              className="text-gray-400 text-sm leading-relaxed"
+              className="text-body text-gray-400 leading-relaxed"
               data-oid="g3awmlk"
             >
               Курс по промптингу для менеджеров. Научитесь создавать AI-продукты
@@ -36,10 +36,19 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div data-oid="8.vqwog">
-            <h4 className="text-white font-semibold mb-4" data-oid="1bi_hte">
+            <h4 className="text-lead font-semibold text-white mb-4" data-oid="1bi_hte">
               Навигация
             </h4>
-            <ul className="space-y-2 text-sm" data-oid="ws0iml1">
+            <ul className="space-y-2 text-body" data-oid="ws0iml1">
+              <li data-oid="y_7r9no">
+                <a
+                  href="#for-whom"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  data-oid="6q47j1n"
+                >
+                  Для кого
+                </a>
+              </li>
               <li data-oid="j64pr3s">
                 <a
                   href="#program"
@@ -49,13 +58,12 @@ export default function Footer() {
                   Программа
                 </a>
               </li>
-              <li data-oid="y_7r9no">
+              <li data-oid="testimonials-link">
                 <a
-                  href="#for-whom"
+                  href="#testimonials"
                   className="text-gray-400 hover:text-white transition-colors"
-                  data-oid="6q47j1n"
                 >
-                  Для кого
+                  Отзывы
                 </a>
               </li>
               <li data-oid="fm9v8n.">
@@ -81,7 +89,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div data-oid="aybly..">
-            <h4 className="text-white font-semibold mb-4" data-oid=":oxfxm_">
+            <h4 className="text-lead font-semibold text-white mb-4" data-oid=":oxfxm_">
               Контакты
             </h4>
             <div className="space-y-3" data-oid="1v5vnj5">
@@ -89,11 +97,11 @@ export default function Footer() {
                 href="https://t.me/time_t0_it"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-sm"
+                className="flex items-center gap-3 text-body text-gray-400 hover:text-white transition-colors"
                 data-oid="wrl..9j"
               >
                 <svg
-                  className="w-5 h-5 text-[#E50914]"
+                  className="w-5 h-5 text-red-primary"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   data-oid="r40g3cp"
@@ -105,7 +113,7 @@ export default function Footer() {
                 </svg>
                 Telegram: @time_t0_it
               </a>
-              <p className="text-gray-400 text-sm" data-oid="k7a424n">
+              <p className="text-body text-gray-400" data-oid="k7a424n">
                 Поддержка: пн-пт, 10:00-19:00 МСК
               </p>
             </div>
@@ -115,7 +123,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10" data-oid="_sfm1mk">
           <div
-            className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400"
+            className="flex flex-col sm:flex-row justify-between items-center gap-4 text-caption text-gray-400"
             data-oid="sued2qm"
           >
             <div data-oid="0e-bfle">

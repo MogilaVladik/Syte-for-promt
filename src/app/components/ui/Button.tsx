@@ -25,7 +25,7 @@ export default function Button({
   "aria-label": ariaLabel,
 }: ButtonProps) {
   const variants: Record<ButtonVariant, string> = {
-    primary: "bg-[#E50914] hover:bg-[#c20712] text-white shadow-lg hover:shadow-[#E50914]/50",
+    primary: "bg-red-primary hover:bg-red-primary/90 text-white shadow-lg hover:shadow-red-primary/50",
     secondary: "bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white",
     vip: "bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black shadow-lg hover:shadow-yellow-500/50",
   };
@@ -39,7 +39,7 @@ export default function Button({
 
   const baseClasses = `
     inline-flex items-center justify-center gap-3 
-    px-8 py-4 font-bold text-lg rounded-2xl 
+    px-8 py-4 font-bold text-lead rounded-2xl 
     transition-all hover:scale-105
     ${variants[safeVariant]}
     ${fullWidth ? "w-full" : ""}

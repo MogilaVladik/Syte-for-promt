@@ -39,7 +39,7 @@ export default function VIPSupport() {
               className="w-8 h-8 text-yellow-500"
             />
             <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600"
+              className="text-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600"
             >
               VIP СОПРОВОЖДЕНИЕ
             </h2>
@@ -49,7 +49,7 @@ export default function VIPSupport() {
             />
           </div>
           <p
-            className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-lead text-gray-400 max-w-3xl mx-auto"
           >
             Эксклюзивная программа для тех, кто хочет внедрить AI в свою
             компанию
@@ -66,7 +66,7 @@ export default function VIPSupport() {
               className="absolute -top-6 left-1/2 -translate-x-1/2"
             >
               <div
-                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-8 py-3 rounded-full text-lg font-black shadow-lg flex items-center justify-center gap-2 text-center"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-8 py-3 rounded-full text-lead font-black shadow-lg flex items-center justify-center gap-2 text-center"
               >
                 <span aria-hidden>★</span>
                 <span>VIP ПАКЕТ</span>
@@ -80,7 +80,7 @@ export default function VIPSupport() {
               {/* Left: Benefits */}
               <div>
                 <h3
-                  className="text-2xl sm:text-3xl font-bold text-white mb-6"
+                  className="text-heading font-bold text-white mb-6"
                 >
                   Что входит в VIP-пакет
                 </h3>
@@ -124,11 +124,11 @@ export default function VIPSupport() {
                       </div>
                       <div>
                         <h4
-                          className="text-lg font-bold text-white mb-1"
+                          className="text-lead font-bold text-white mb-1"
                         >
                           {item.title}
                         </h4>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-body text-gray-400">
                           {item.desc}
                         </p>
                       </div>
@@ -139,7 +139,7 @@ export default function VIPSupport() {
                 <div
                   className="bg-gradient-to-r from-yellow-500/20 to-transparent border-l-4 border-yellow-500 p-4 rounded-r-xl"
                 >
-                  <p className="text-sm text-gray-300">
+                  <p className="text-body text-gray-300">
                     <span
                       className="font-bold text-yellow-500"
                     >
@@ -155,12 +155,12 @@ export default function VIPSupport() {
               <div className="text-center lg:text-left">
                 <div className="mb-6">
                   <div
-                    className="text-gray-400 text-lg mb-2"
+                    className="text-body text-gray-400 mb-2"
                   >
                     Стоимость VIP-пакета
                   </div>
                   <div
-                    className="text-6xl sm:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-4"
+                    className="text-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-4"
                   >
                     {PRICE_VIP.toLocaleString("ru-RU")}
                     <span className="text-4xl sm:text-5xl">
@@ -169,12 +169,12 @@ export default function VIPSupport() {
                     </span>
                   </div>
                   <div
-                    className="text-sm text-gray-500 mb-2"
+                    className="text-body text-gray-500 mb-2"
                   >
                     Вместо 135 000 ₽ при отдельной покупке
                   </div>
                   <div
-                    className="inline-block bg-green-500/20 border border-green-500 text-green-400 px-4 py-2 rounded-full text-sm font-bold"
+                    className="inline-block bg-green-500/20 border border-green-500 text-green-400 px-4 py-2 rounded-full text-caption font-bold"
                   >
                     Экономия 35 000 ₽
                   </div>
@@ -185,7 +185,7 @@ export default function VIPSupport() {
                   className="bg-black/50 rounded-2xl p-6 mb-6 border border-yellow-500/30"
                 >
                   <div
-                    className="text-sm text-gray-400 mb-3"
+                    className="text-body text-gray-400 mb-3"
                   >
                     VIP-пакет включает:
                   </div>
@@ -199,7 +199,7 @@ export default function VIPSupport() {
                           name="check"
                           className="w-5 h-5 text-yellow-500 flex-shrink-0"
                         />
-                        <span className="text-sm">
+                        <span className="text-body">
                           {item.label}
                         </span>
                       </li>
@@ -216,7 +216,7 @@ export default function VIPSupport() {
                   Записаться на VIP-пакет
                 </Button>
 
-                <p className="text-xs text-gray-500 mt-4">
+                <p className="text-caption text-gray-500 mt-4">
                   Ограниченное предложение — осталось всего 5 мест
                 </p>
               </div>

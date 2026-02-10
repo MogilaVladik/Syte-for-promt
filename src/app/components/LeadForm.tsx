@@ -104,19 +104,19 @@ export default function LeadForm() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#E50914] focus:ring-1 focus:ring-[#E50914]/50 transition-colors";
+    "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-red-primary focus:ring-1 focus:ring-red-primary/50 transition-colors";
 
   return (
     <section
       id="lead-form"
       className="py-16 sm:py-24 bg-gradient-to-b from-[#1a1a1a] to-[#0B0B0B]"
     >
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+          <h2 className="text-heading font-bold text-white mb-3">
             Оставить заявку
           </h2>
-          <p className="text-gray-400">
+          <p className="text-body text-gray-400">
             Оставьте контакты — мы свяжемся с вами
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function LeadForm() {
 
           <div className="space-y-4 mb-6">
             <label className="block">
-              <span className="text-sm text-gray-400 mb-1 block">Имя</span>
+              <span className="text-caption text-gray-400 mb-1 block">Имя</span>
               <input
                 type="text"
                 value={name}
@@ -151,11 +151,11 @@ export default function LeadForm() {
                 maxLength={NAME_MAX_LENGTH}
               />
               {nameError && (
-                <p className="mt-1 text-xs text-red-400">{nameError}</p>
+                <p className="mt-1 text-caption text-red-400">{nameError}</p>
               )}
             </label>
             <label className="block">
-              <span className="text-sm text-gray-400 mb-1 block">Telegram</span>
+              <span className="text-caption text-gray-400 mb-1 block">Telegram</span>
               <input
                 type="text"
                 value={telegram}
@@ -175,13 +175,13 @@ export default function LeadForm() {
                 onChange={setAgreePolicy}
                 aria-label="Согласие с политикой конфиденциальности"
               />
-              <span className="text-sm text-gray-300 group-hover:text-gray-200">
+              <span className="text-body text-gray-300 group-hover:text-gray-200">
                 Я ознакомлен(а) и согласен(а) с{" "}
                 <Link
                   href="/privacy?from=lead"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#E50914] hover:underline"
+                  className="text-red-primary hover:underline"
                 >
                   политикой конфиденциальности
                 </Link>
@@ -193,13 +193,13 @@ export default function LeadForm() {
                 onChange={setAgreeProcessing}
                 aria-label="Согласие на обработку персональных данных"
               />
-              <span className="text-sm text-gray-300 group-hover:text-gray-200">
+              <span className="text-body text-gray-300 group-hover:text-gray-200">
                 Даю{" "}
                 <Link
                   href="/privacy?from=lead"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#E50914] hover:underline"
+                  className="text-red-primary hover:underline"
                 >
                   согласие на обработку персональных данных
                 </Link>
@@ -221,12 +221,12 @@ export default function LeadForm() {
           )}
 
           {status === "success" && (
-            <div className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
+            <div className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-body">
               Заявка отправлена. Мы свяжемся с вами в ближайшее время.
             </div>
           )}
           {status === "error" && errorMessage && (
-            <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+            <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-body">
               {errorMessage}
             </div>
           )}
@@ -234,7 +234,7 @@ export default function LeadForm() {
           <button
             type="submit"
             disabled={!canSubmit}
-            className="w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-[#E50914] hover:bg-[#c20712] text-white hover:shadow-lg hover:shadow-[#E50914]/30 disabled:hover:shadow-none"
+            className="w-full py-4 px-6 rounded-2xl font-semibold text-lead transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-red-primary hover:bg-red-primary/90 text-white hover:shadow-lg hover:shadow-red-primary/30 disabled:hover:shadow-none"
           >
             {status === "sending" ? "Отправка…" : "Отправить заявку"}
           </button>
@@ -260,8 +260,8 @@ function ToggleSwitch({
       aria-checked={checked}
       aria-label={ariaLabel}
       onClick={() => onChange(!checked)}
-      className={`flex-shrink-0 inline-flex items-center w-11 h-6 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#E50914] focus:ring-offset-2 focus:ring-offset-[#0B0B0B] ${
-        checked ? "bg-[#E50914]" : "bg-white/20"
+      className={`flex-shrink-0 inline-flex items-center w-11 h-6 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-red-primary focus:ring-offset-2 focus:ring-offset-[#0B0B0B] ${
+        checked ? "bg-red-primary" : "bg-white/20"
       }`}
     >
       <span

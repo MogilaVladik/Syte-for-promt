@@ -30,7 +30,7 @@ export default function StickyMobileCTA() {
           {/* Main CTA */}
           <a
             href="#pricing"
-            className="flex-1 px-4 py-3 bg-[#E50914] hover:bg-[#c20712] text-white font-bold text-center rounded-xl transition-all shadow-lg active:scale-95"
+            className="flex-1 px-4 py-3 bg-red-primary hover:bg-red-primary/90 text-white font-bold text-center rounded-xl transition-all shadow-lg active:scale-95"
             data-oid="q32q1b8"
           >
             Записаться — 35 000 ₽

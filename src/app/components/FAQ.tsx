@@ -25,20 +25,20 @@ export default function FAQ() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-heading font-bold text-white mb-4"
           >
             Частые{" "}
-            <span className="text-[#E50914]">
+            <span className="text-red-primary">
               вопросы
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-400">
+          <p className="text-lead text-gray-400">
             Не нашли ответ?{" "}
             <a
               href={TELEGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#E50914] hover:underline"
+              className="text-red-primary hover:underline"
             >
               Напишите нам
             </a>
@@ -55,7 +55,7 @@ export default function FAQ() {
               return (
                 <div
                   key={faqId}
-                  className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-[#E50914]/50"
+                  className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-red-primary/50"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
@@ -65,7 +65,7 @@ export default function FAQ() {
                     id={`${faqId}-button`}
                   >
                 <span
-                  className="text-lg sm:text-xl font-semibold text-white pr-4"
+                  className="text-lead font-semibold text-white pr-4"
                 >
                   {faq.question}
                 </span>
@@ -74,7 +74,7 @@ export default function FAQ() {
                 >
                   <Icon
                     name="arrow-down"
-                    className="w-6 h-6 text-[#E50914]"
+                    className="w-6 h-6 text-red-primary"
                   />
                 </div>
               </button>
@@ -87,7 +87,7 @@ export default function FAQ() {
                       className="px-6 sm:px-8 pb-6 sm:pb-8 border-t border-white/10 animate-fade-in-up"
                     >
                       <p
-                        className="mt-4 text-base sm:text-lg text-gray-300 leading-relaxed"
+                        className="mt-4 text-body text-gray-300 leading-relaxed"
                       >
                         {faq.answer}
                       </p>
@@ -106,10 +106,10 @@ export default function FAQ() {
         {/* CTA */}
         <div className="mt-12 sm:mt-16 text-center">
           <div
-            className="bg-gradient-to-r from-[#E50914]/10 to-transparent border border-[#E50914]/30 rounded-2xl p-6 sm:p-8"
+            className="bg-gradient-to-r from-red-primary/10 to-transparent border border-red-primary/30 rounded-2xl p-6 sm:p-8"
           >
             <p
-              className="text-lg sm:text-xl text-gray-300 mb-6"
+              className="text-lead text-gray-300 mb-6"
             >
               Остались вопросы? Свяжитесь с нами напрямую
             </p>
