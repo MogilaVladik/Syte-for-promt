@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ForWhom from "./components/ForWhom";
@@ -32,32 +30,6 @@ export default function Page() {
         <VIPSupport />
         <FAQ />
         <ScrollToTop />
-
-      {/* Юридические ссылки в конце страницы */}
-      <section className="mt-6 sm:mt-8 border-t border-white/10 pt-6 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-end gap-x-6 gap-y-2">
-            <Link
-              href="/privacy"
-              className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
-            >
-              Политика конфиденциальности
-            </Link>
-            <Link
-              href="/privacy#soglasie"
-              className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
-            >
-              Согласие на обработку данных
-            </Link>
-            <Link
-              href="/offer"
-              className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
-            >
-              Договор-оферта
-            </Link>
-          </div>
-        </div>
-      </section>
 
         <Footer />
       </div>
