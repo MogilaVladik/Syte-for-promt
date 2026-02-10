@@ -94,7 +94,7 @@ export default function OfferPage() {
         }`}
       >
         <Link
-          href="/"
+          href="/#footer"
           className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8"
         >
           ← На главную
@@ -253,7 +253,7 @@ export default function OfferPage() {
 
         <div className="mt-10">
           <Link
-            href="/"
+            href="/#footer"
             className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
           >
             ← На главную

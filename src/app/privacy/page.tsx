@@ -235,11 +235,15 @@ function PrivacyContent() {
 
 export default function PrivacyPage() {
   return (
-    <Suspense fallback={
-      <main className="min-h-screen bg-black text-gray-200 flex items-center justify-center">
-        <Link href="/" className="text-gray-400 hover:text-white">← На главную</Link>
-      </main>
-    }>
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-black text-gray-200 flex items-center justify-center">
+          <Link href="/#footer" className="text-gray-400 hover:text-white">
+            ← На главную
+          </Link>
+        </main>
+      }
+    >
       <PrivacyContent />
     </Suspense>
   );
