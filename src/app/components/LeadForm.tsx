@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { FORMSPREE_FORM_ID } from "@/config/constants";
 
 export default function LeadForm() {
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ export default function LeadForm() {
     agreeProcessing &&
     status !== "sending";
 
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || FORMSPREE_FORM_ID;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

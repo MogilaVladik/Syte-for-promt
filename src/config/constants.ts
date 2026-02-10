@@ -1,5 +1,7 @@
 // URLs
 export const TELEGRAM_URL = "https://t.me/time_t0_it";
+/** ID формы Formspree для блока «Оставить заявку» (https://formspree.io/f/maqdqndg) */
+export const FORMSPREE_FORM_ID = "maqdqndg";
 
 // Colors
 export const COLOR_PRIMARY = "#E50914";
