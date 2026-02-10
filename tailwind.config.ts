@@ -22,6 +22,8 @@ export default {
         body: ["1rem", { lineHeight: "1.6" }],
         lead: ["1.125rem", { lineHeight: "1.5" }],
         heading: ["1.5rem", { lineHeight: "1.3" }],
+        title: ["2rem", { lineHeight: "1.25" }],
+        display: ["3rem", { lineHeight: "1.2" }],
       },
       animation: {
         float: "float 6s ease-in-out infinite",

@@ -23,7 +23,7 @@ export default function Program() {
             {/* Header */}
             <div className="mb-12">
               <h2
-                className="text-heading font-bold text-white mb-4"
+                className="text-title font-bold text-white mb-4"
               >
                 Программа{" "}
                 <span className="text-red-primary">

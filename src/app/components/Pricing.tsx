@@ -24,7 +24,7 @@ export default function Pricing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Заголовок */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-heading font-bold text-white mb-4">
+          <h2 className="text-title font-bold text-white mb-4">
             Стоимость <span className="text-red-primary">курса</span>
           </h2>
           <p className="text-lead text-gray-400 max-w-2xl mx-auto">
@@ -51,7 +51,7 @@ export default function Pricing() {
               {/* Левая колонка: цена */}
               <div className="text-center lg:text-left">
                 <div className="mb-4">
-                  <div className="text-heading font-bold text-white whitespace-nowrap">
+                  <div className="text-display font-bold text-white whitespace-nowrap">
                     {PRICE_EARLY.toLocaleString("ru-RU")}
                     {"\u00A0"}₽
                   </div>

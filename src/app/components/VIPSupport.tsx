@@ -39,7 +39,7 @@ export default function VIPSupport() {
               className="w-8 h-8 text-yellow-500"
             />
             <h2
-              className="text-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600"
+              className="text-title font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600"
             >
               VIP СОПРОВОЖДЕНИЕ
             </h2>
@@ -160,7 +160,7 @@ export default function VIPSupport() {
                     Стоимость VIP-пакета
                   </div>
                   <div
-                    className="text-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-4"
+                    className="text-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-4"
                   >
                     {PRICE_VIP.toLocaleString("ru-RU")}
                     <span className="text-4xl sm:text-5xl">

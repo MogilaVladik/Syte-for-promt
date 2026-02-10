@@ -10,7 +10,7 @@ export default function Results() {
       {/* Header */}
       <div className="text-center mb-12 sm:mb-16">
         <h2
-          className="text-heading font-bold text-white mb-4"
+          className="text-title font-bold text-white mb-4"
         >
           Что вы{" "}
           <span className="text-red-primary">

@@ -113,7 +113,7 @@ export default function LeadForm() {
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-heading font-bold text-white mb-3">
+          <h2 className="text-title font-bold text-white mb-3">
             Оставить заявку
           </h2>
           <p className="text-body text-gray-400">

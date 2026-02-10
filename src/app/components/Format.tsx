@@ -13,7 +13,7 @@ export default function Format() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2
-            className="text-heading font-bold text-white mb-4"
+            className="text-title font-bold text-white mb-4"
           >
             Формат и{" "}
             <span className="text-red-primary">

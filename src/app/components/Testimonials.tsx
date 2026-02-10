@@ -53,7 +53,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-heading font-bold text-white mb-4">
+          <h2 className="text-title font-bold text-white mb-4">
             Отзывы{" "}
             <span className="text-red-primary">участников</span>
           </h2>
