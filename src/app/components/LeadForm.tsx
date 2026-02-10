@@ -20,25 +20,33 @@ export default function LeadForm() {
     agreeProcessing &&
     status !== "sending";
 
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!canSubmit) return;
+    if (!formspreeId) {
+      setStatus("error");
+      setErrorMessage("Форма не настроена. Напишите нам в Telegram.");
+      return;
+    }
     setStatus("sending");
     setErrorMessage("");
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           name: name.trim(),
           phone: phone.trim(),
           telegram: telegram.trim(),
+          _subject: "Заявка с сайта",
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setStatus("error");
-        setErrorMessage(data.error || "Не удалось отправить заявку.");
+        setErrorMessage(data.error || "Не удалось отправить заявку. Напишите в Telegram.");
         return;
       }
       setStatus("success");
