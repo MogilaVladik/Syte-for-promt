@@ -1,16 +1,22 @@
 // src/app/privacy/page.tsx
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
-export default function PrivacyPage() {
+function PrivacyContent() {
+  const searchParams = useSearchParams();
+  const fromLead = searchParams.get("from") === "lead";
+  const backHref = fromLead ? "/#lead-form" : "/#footer";
+
   return (
     <main className="min-h-screen bg-black text-gray-200">
       <div
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
       >
         <Link
-          href="/#lead-form"
+          href={backHref}
           className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8"
         >
           ← На главную
@@ -210,7 +216,7 @@ export default function PrivacyPage() {
 
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
-            href="/#lead-form"
+            href={backHref}
             className="text-gray-400 hover:text-white transition-colors text-sm"
           >
             ← На главную
@@ -224,5 +230,17 @@ export default function PrivacyPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function PrivacyPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-black text-gray-200 flex items-center justify-center">
+        <Link href="/" className="text-gray-400 hover:text-white">← На главную</Link>
+      </main>
+    }>
+      <PrivacyContent />
+    </Suspense>
   );
 }

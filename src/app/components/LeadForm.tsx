@@ -132,7 +132,7 @@ export default function LeadForm() {
               <span className="text-sm text-gray-300 group-hover:text-gray-200">
                 Я ознакомлен(а) и согласен(а) с{" "}
                 <Link
-                  href="/privacy"
+                  href="/privacy?from=lead"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#E50914] hover:underline"
@@ -150,7 +150,7 @@ export default function LeadForm() {
               <span className="text-sm text-gray-300 group-hover:text-gray-200">
                 Даю{" "}
                 <Link
-                  href="/privacy"
+                  href="/privacy?from=lead"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#E50914] hover:underline"

@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { OFFER_PROTECTION_INTERVAL, OFFER_WINDOW_SIZE_THRESHOLD } from "@/config/constants";
 
 export default function OfferPage() {
@@ -92,6 +93,12 @@ export default function OfferPage() {
           locked ? "offer-locked" : ""
         }`}
       >
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-8"
+        >
+          ← На главную
+        </Link>
         <h1 className="text-2xl sm:text-3xl font-bold text-white mb-6">
           Договор-оферта на оказание услуг по обучению
         </h1>
@@ -243,6 +250,15 @@ export default function OfferPage() {
             Защита активирована. Закройте инструменты разработчика и обновите страницу.
           </div>
         )}
+
+        <div className="mt-10">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            ← На главную
+          </Link>
+        </div>
       </div>
     </main>
   );

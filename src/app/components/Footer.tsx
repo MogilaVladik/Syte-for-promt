@@ -5,6 +5,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="footer"
       className="bg-[#0B0B0B] border-t border-white/10 py-12 sm:py-16"
       data-oid="ntkaoxm"
     >
@@ -122,14 +123,14 @@ export default function Footer() {
             </div>
             <div className="flex gap-6" data-oid="4mloj3m">
               <a
-                href="/privacy"
+                href="/privacy?from=footer"
                 className="hover:text-white transition-colors"
                 data-oid="x3_gbuv"
               >
                 Политика конфиденциальности
               </a>
               <a
-                href="/privacy#soglasie"
+                href="/privacy?from=footer"
                 className="hover:text-white transition-colors"
                 data-oid="soglasie-link"
               >
