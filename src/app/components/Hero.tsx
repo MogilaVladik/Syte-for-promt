@@ -57,7 +57,7 @@ export default function Hero() {
             </div>
 
             {/* H1 */}
-            <h1 className="text-title font-bold text-white leading-tight tracking-tight animate-fade-in-up">
+            <h1 className="text-display font-bold text-white leading-tight tracking-tight animate-fade-in-up">
               Курс по промптингу <br />
               для <span className="text-red-primary">менеджеров</span>
             </h1>
