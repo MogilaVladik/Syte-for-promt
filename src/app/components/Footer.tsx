@@ -122,14 +122,21 @@ export default function Footer() {
             </div>
             <div className="flex gap-6" data-oid="4mloj3m">
               <a
-                href="#privacy"
+                href="/privacy"
                 className="hover:text-white transition-colors"
                 data-oid="x3_gbuv"
               >
                 Политика конфиденциальности
               </a>
               <a
-                href="#terms"
+                href="/privacy#soglasie"
+                className="hover:text-white transition-colors"
+                data-oid="soglasie-link"
+              >
+                Согласие на обработку данных
+              </a>
+              <a
+                href="/offer"
                 className="hover:text-white transition-colors"
                 data-oid="nipe2um"
               >
