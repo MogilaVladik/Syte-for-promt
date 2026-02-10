@@ -1,13 +1,8 @@
 "use client";
 
-import { TELEGRAM_URL, COLOR_PRIMARY, COLOR_PRIMARY_DARK } from "@/config/constants";
+import { TELEGRAM_URL } from "@/config/constants";
 
 export default function Navbar() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg shadow-lg border-b border-[#E50914]/30"
@@ -24,10 +19,6 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <a
               href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("hero");
-              }}
               className="text-xl sm:text-2xl font-bold text-white hover:text-[#E50914] transition-colors"
               aria-label="Вернуться на главную"
             >
@@ -40,41 +31,41 @@ export default function Navbar() {
           <div
             className="hidden md:flex items-center space-x-6 lg:space-x-8"
           >
-            <button
-              onClick={() => scrollToSection("program")}
+            <a
+              href="#program"
               className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
               aria-label="Перейти к программе курса"
             >
               Программа
-            </button>
-            <button
-              onClick={() => scrollToSection("for-whom")}
+            </a>
+            <a
+              href="#for-whom"
               className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
               aria-label="Перейти к разделу 'Для кого'"
             >
               Для кого
-            </button>
-            <button
-              onClick={() => scrollToSection("testimonials")}
+            </a>
+            <a
+              href="#testimonials"
               className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
               aria-label="Перейти к отзывам и проектам учеников"
             >
               Отзывы
-            </button>
-            <button
-              onClick={() => scrollToSection("pricing")}
+            </a>
+            <a
+              href="#pricing"
               className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
               aria-label="Перейти к стоимости курса"
             >
               Стоимость
-            </button>
-            <button
-              onClick={() => scrollToSection("faq")}
+            </a>
+            <a
+              href="#faq"
               className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
               aria-label="Перейти к часто задаваемым вопросам"
             >
               FAQ
-            </button>
+            </a>
           </div>
 
           {/* CTA Button */}
