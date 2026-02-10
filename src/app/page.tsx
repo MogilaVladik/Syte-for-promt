@@ -9,6 +9,7 @@ import Format from "./components/Format";
 import Testimonials from "./components/Testimonials";
 import Pricing from "./components/Pricing";
 import VIPSupport from "./components/VIPSupport";
+import LeadForm from "./components/LeadForm";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -28,6 +29,7 @@ export default function Page() {
         <Testimonials />
         <Pricing />
         <VIPSupport />
+        <LeadForm />
         <FAQ />
         <ScrollToTop />
 
