@@ -7,11 +7,25 @@ import { FORMSPREE_FORM_ID } from "@/config/constants";
 
 const TURNSTILE_SCRIPT = "https://challenges.cloudflare.com/turnstile/v0/api.js";
 
+const NAME_MIN_LENGTH = 2;
+const NAME_MAX_LENGTH = 80;
+const NAME_REGEX = /^[\p{L}\s\-']+$/u;
+
+function validateName(value: string): string | null {
+  const trimmed = value.trim();
+  if (trimmed.length < NAME_MIN_LENGTH) return "Введите имя (минимум 2 буквы)";
+  if (trimmed.length > NAME_MAX_LENGTH) return "Слишком длинное имя";
+  if (!NAME_REGEX.test(trimmed)) return "Имя может содержать только буквы, пробелы, дефис";
+  const letters = trimmed.replace(/\s/g, "");
+  if (letters.length < 2) return "Введите имя (минимум 2 буквы)";
+  if (/^(.)\1+$/u.test(letters)) return "Введите настоящее имя";
+  return null;
+}
+
 export default function LeadForm() {
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
   const [telegram, setTelegram] = useState("");
-  const [honeypot, setHoneypot] = useState(""); // скрытое поле: если заполнено — бот, не отправляем
+  const [honeypotChecked, setHoneypotChecked] = useState(false); // скрытый чекбокс: если отмечен — бот
   const [agreePolicy, setAgreePolicy] = useState(false);
   const [agreeProcessing, setAgreeProcessing] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState("");
@@ -23,9 +37,10 @@ export default function LeadForm() {
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
   const captchaRequired = Boolean(turnstileSiteKey);
 
+  const nameError = name.trim() ? validateName(name) : null;
   const canSubmit =
     name.trim() &&
-    phone.trim() &&
+    !nameError &&
     telegram.trim() &&
     agreePolicy &&
     agreeProcessing &&
@@ -46,7 +61,7 @@ export default function LeadForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (honeypot.trim()) return; // бот заполнил скрытое поле — не отправляем и ничего не показываем
+    if (honeypotChecked) return; // бот отметил скрытый чекбокс — не отправляем
     if (!canSubmit) return;
     if (!formspreeId) {
       setStatus("error");
@@ -58,7 +73,6 @@ export default function LeadForm() {
     try {
       const body: Record<string, string> = {
         name: name.trim(),
-        phone: phone.trim(),
         telegram: telegram.trim(),
         _subject: "Заявка с сайта",
       };
@@ -72,12 +86,12 @@ export default function LeadForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setStatus("error");
-        setErrorMessage(data.error || "Не удалось отправить заявку. Напишите в Telegram.");
+        const msg = data.error || data.message || data.errors?.[0]?.message;
+        setErrorMessage(msg ? String(msg) : "Не удалось отправить заявку. Напишите в Telegram.");
         return;
       }
       setStatus("success");
       setName("");
-      setPhone("");
       setTelegram("");
       setAgreePolicy(false);
       setAgreeProcessing(false);
@@ -111,17 +125,15 @@ export default function LeadForm() {
           onSubmit={handleSubmit}
           className="bg-black/50 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl"
         >
-          {/* Скрытое поле от ботов: люди его не видят и не заполняют, боты часто заполняют всё подряд */}
+          {/* Скрытый чекбокс от ботов: люди его не видят, боты часто отмечают все галочки */}
             <div className="absolute -left-[9999px] w-0 h-0 overflow-hidden" aria-hidden="true">
-              <label htmlFor="lead-website">Не заполняйте</label>
               <input
-                id="lead-website"
-                type="text"
-                name="website"
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
+                id="lead-dont-check"
+                type="checkbox"
+                name="dont_check"
+                checked={honeypotChecked}
+                onChange={(e) => setHoneypotChecked(e.target.checked)}
                 tabIndex={-1}
-                autoComplete="off"
               />
             </div>
 
@@ -132,23 +144,15 @@ export default function LeadForm() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className={inputClass}
+                className={`${inputClass} ${nameError ? "border-red-500/50" : ""}`}
                 placeholder="Как к вам обращаться"
                 required
                 autoComplete="name"
+                maxLength={NAME_MAX_LENGTH}
               />
-            </label>
-            <label className="block">
-              <span className="text-sm text-gray-400 mb-1 block">Телефон</span>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className={inputClass}
-                placeholder="+7 (999) 123-45-67"
-                required
-                autoComplete="tel"
-              />
+              {nameError && (
+                <p className="mt-1 text-xs text-red-400">{nameError}</p>
+              )}
             </label>
             <label className="block">
               <span className="text-sm text-gray-400 mb-1 block">Telegram</span>
@@ -157,7 +161,7 @@ export default function LeadForm() {
                 value={telegram}
                 onChange={(e) => setTelegram(e.target.value)}
                 className={inputClass}
-                placeholder="@username или ссылка"
+                placeholder="@username"
                 required
                 autoComplete="username"
               />
