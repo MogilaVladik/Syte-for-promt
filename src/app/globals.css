@@ -126,7 +126,7 @@ html {
 }
 
 .testimonials-scroller::-webkit-scrollbar {
-    height: 6px;
+    height: 4px;
 }
 
 .testimonials-scroller::-webkit-scrollbar-track {

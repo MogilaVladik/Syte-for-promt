@@ -142,7 +142,7 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-red-primary/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <ImageWithFallback
-                      src="/images/bulldog-hero.png?v=2"
+                      src="/images/bulldog-hero.png?v=3"
                       alt="Бульдог-разработчик за клавиатурой"
                       fill
                       priority
