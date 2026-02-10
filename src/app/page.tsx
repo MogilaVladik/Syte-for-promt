@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials";
 import Pricing from "./components/Pricing";
 import VIPSupport from "./components/VIPSupport";
 import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import CourseSchema from "./components/CourseSchema";
 
@@ -32,10 +33,22 @@ export default function Page() {
         <FAQ />
         <ScrollToTop />
 
-      {/* Ссылка на оферту в самом конце страницы */}
+      {/* Юридические ссылки в конце страницы */}
       <section className="mt-6 sm:mt-8 border-t border-white/10 pt-6 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end">
+          <div className="flex flex-wrap justify-end gap-x-6 gap-y-2">
+            <Link
+              href="/privacy"
+              className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
+            >
+              Политика конфиденциальности
+            </Link>
+            <Link
+              href="/privacy#soglasie"
+              className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
+            >
+              Согласие на обработку данных
+            </Link>
             <Link
               href="/offer"
               className="text-xs text-white/60 hover:text-white/90 underline underline-offset-2"
@@ -45,6 +58,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+        <Footer />
       </div>
     </>
   );
