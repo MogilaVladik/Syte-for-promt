@@ -216,7 +216,7 @@
 ### Meta-теги
 - Title с ключевыми словами
 - Description оптимизированный
-- Keywords (промптинг, Cursor, Onlook, GitLab)
+- Keywords (промптинг, Cursor, Onlook, GitHub)
 - OpenGraph для соцсетей
 - Twitter Card
 

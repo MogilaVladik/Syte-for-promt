@@ -1,7 +1,7 @@
 {
   "name": "Промптинг для менеджеров",
   "short_name": "Промптинг",
-  "description": "Курс по промптингу для менеджеров. 4 практических занятия: Onlook, Cursor, GitLab",
+  "description": "Курс по промптингу для менеджеров. 4 практических занятия: Onlook, Cursor, GitHub",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0B0B0B",

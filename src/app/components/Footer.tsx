@@ -30,7 +30,7 @@ export default function Footer() {
               data-oid="g3awmlk"
             >
               Курс по промптингу для менеджеров. Научитесь создавать AI-продукты
-              с Cursor, Onlook и GitLab.
+              с Cursor, Onlook и GitHub.
             </p>
           </div>
 

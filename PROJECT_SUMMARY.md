@@ -128,8 +128,8 @@
 ### Meta-теги
 ```html
 <title>Курс по промптингу для менеджеров — старт 15 декабря — 35 000 ₽</title>
-<meta name="description" content="4 практических занятия: Onlook, Cursor, GitLab..." />
-<meta name="keywords" content="курс по промптингу, Cursor, Onlook, GitLab" />
+<meta name="description" content="4 практических занятия: Onlook, Cursor, GitHub..." />
+<meta name="keywords" content="курс по промптингу, Cursor, Onlook, GitHub" />
 ```
 
 ### Структура

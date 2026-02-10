@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://timetoitai.ru"),
   title: `Курс по промптингу для менеджеров — старт ${COURSE_START_DATE} — ${PRICE_REGULAR.toLocaleString("ru-RU")} ₽`,
   description:
-    "4 практических занятия: Onlook, Cursor, GitLab. Соберите свой AI-MVP и опубликуйте его. В цену включена подписка на Onlook",
+    "4 практических занятия: Onlook, Cursor, GitHub. Соберите свой AI-MVP и опубликуйте его. В цену включена подписка на Onlook",
   keywords: [
     "курс по промптингу",
     "Cursor",
     "Onlook",
-    "GitLab",
+    "GitHub",
     "AI для менеджеров",
     "промптинг",
     "обучение промптингу",
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     url: "https://timetoitai.ru",
     title: `Курс по промптингу для менеджеров — старт ${COURSE_START_DATE}`,
     description:
-      "4 практических занятия: Onlook, Cursor, GitLab. Соберите свой AI-MVP и опубликуйте его.",
+      "4 практических занятия: Onlook, Cursor, GitHub. Соберите свой AI-MVP и опубликуйте его.",
     siteName: "Time to IT",
   },
   twitter: {
     card: "summary_large_image",
     title: `Курс по промптингу для менеджеров — старт ${COURSE_START_DATE}`,
     description:
-      "4 практических занятия: Onlook, Cursor, GitLab. Соберите свой AI-MVP и опубликуйте его.",
+      "4 практических занятия: Onlook, Cursor, GitHub. Соберите свой AI-MVP и опубликуйте его.",
   },
   alternates: {
     canonical: "https://timetoitai.ru",

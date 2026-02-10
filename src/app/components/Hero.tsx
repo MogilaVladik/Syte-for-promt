@@ -65,12 +65,12 @@ export default function Hero() {
             {/* Subtitle */}
             <p className="text-lead text-gray-300 max-w-2xl animate-fade-in-up [animation-delay:200ms]">
               4 практических занятия, на каждом вы продвигаете свой проект от идеи
-              до GitLab
+              до GitHub
             </p>
 
             {/* Lead */}
             <p className="text-body text-gray-light max-w-xl animate-fade-in-up [animation-delay:300ms]">
-              Соберите свой AI-инструмент за 4 занятия и выложите его в GitLab
+              Соберите свой AI-инструмент за 4 занятия и выложите его в GitHub
             </p>
 
             {/* Price Block — больше воздуха между элементами */}
@@ -142,7 +142,7 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-red-primary/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <ImageWithFallback
-                      src="/images/bulldog-hero.webp"
+                      src="/images/bulldog-hero.png"
                       alt="Голубой французский бульдог"
                       fill
                       priority

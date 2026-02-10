@@ -4,7 +4,7 @@ export interface TestimonialItem {
   company: string;
   text: string;
   avatar: string;
-  /** Ссылка на проект ученика (GitLab, Vercel и т.д.) */
+  /** Ссылка на проект ученика (GitHub, Vercel и т.д.) */
   projectUrl?: string;
   /** Подпись к ссылке, например название проекта */
   projectLabel?: string;

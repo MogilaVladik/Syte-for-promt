@@ -60,7 +60,7 @@ docker build -t prompting-landing .
 docker run -p 3000:3000 prompting-landing
 ```
 
-### 4. GitLab Pages (статичный экспорт)
+### 4. GitHub Pages (статичный экспорт)
 
 1. Добавьте в `next.config.ts`:
 
@@ -73,7 +73,7 @@ const nextConfig: NextConfig = {
 };
 ```
 
-2. Создайте `.gitlab-ci.yml`:
+2. Создайте `.github/workflows/deploy.yml`:
 
 ```yaml
 image: oven/bun:1

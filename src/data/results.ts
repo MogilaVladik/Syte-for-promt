@@ -18,7 +18,7 @@ export const results: ResultItem[] = [
   },
   {
     icon: "🚀",
-    text: "Проект опубликован в GitLab",
+    text: "Проект опубликован в GitHub",
   },
   {
     icon: "📚",
