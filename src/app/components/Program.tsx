@@ -124,9 +124,9 @@ export default function Program() {
             </div>
           </div>
 
-          {/* Right: фото автора — на уровне первого блока */}
+          {/* Right: фото автора — на уровне первого блока, с плавным затуханием внизу */}
           <div className="hidden lg:flex justify-center items-start">
-            <div className="relative w-[40rem] max-w-full h-[44rem] xl:h-[56rem] flex justify-center items-center">
+            <div className="relative w-[40rem] max-w-full h-[44rem] xl:h-[56rem] flex justify-center items-center overflow-hidden">
               <Image
                 src="/images/author.png"
                 alt="Автор курса"
@@ -134,6 +134,14 @@ export default function Program() {
                 className="object-contain object-center"
                 sizes="(max-width: 1024px) 0vw, 768px"
                 quality={95}
+              />
+              {/* Дымка: плавный переход в фон секции */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "linear-gradient(to bottom, transparent 0%, transparent 50%, #1a1a1a 75%, #0B0B0B 100%)",
+                }}
+                aria-hidden
               />
             </div>
           </div>
