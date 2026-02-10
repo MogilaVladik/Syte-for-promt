@@ -32,18 +32,18 @@ export default function Navbar() {
             className="hidden md:flex items-center space-x-6 lg:space-x-8"
           >
             <a
-              href="#program"
-              className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
-              aria-label="Перейти к программе курса"
-            >
-              Программа
-            </a>
-            <a
               href="#for-whom"
               className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
               aria-label="Перейти к разделу 'Для кого'"
             >
               Для кого
+            </a>
+            <a
+              href="#program"
+              className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
+              aria-label="Перейти к программе курса"
+            >
+              Программа
             </a>
             <a
               href="#testimonials"
