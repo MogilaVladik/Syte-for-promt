@@ -124,15 +124,15 @@ export default function Program() {
             </div>
           </div>
 
-          {/* Right: фото автора — увеличено ~1.5×, напротив 2–3 блоков */}
-          <div className="hidden lg:flex justify-center items-start pt-48 xl:pt-52">
-            <div className="relative w-80 h-[22rem] xl:w-96 xl:h-[28rem] flex justify-center items-center">
+          {/* Right: фото автора — в 2× больше, строго напротив 2–3 блоков */}
+          <div className="hidden lg:flex justify-center items-start pt-[18rem] xl:pt-[22rem]">
+            <div className="relative w-[40rem] max-w-full h-[44rem] xl:h-[56rem] flex justify-center items-center">
               <Image
                 src="/images/author.png"
                 alt="Автор курса"
                 fill
                 className="object-contain object-center"
-                sizes="(max-width: 1024px) 0vw, 384px"
+                sizes="(max-width: 1024px) 0vw, 768px"
                 quality={95}
               />
             </div>
