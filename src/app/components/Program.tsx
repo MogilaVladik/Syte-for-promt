@@ -124,37 +124,38 @@ export default function Program() {
             </div>
           </div>
 
-          {/* Right: Animated Bulldog Coder */}
+          {/* Right: Два персонажа — учёба и практика */}
           <div
-            className="hidden lg:flex justify-center items-center"
+            className="hidden lg:flex flex-col justify-center items-center gap-6"
           >
-            <div
-              className="relative w-80 h-80 xl:w-96 xl:h-96"
-            >
-              <div
-                className="absolute inset-0 animate-typing"
-              >
-                <div className="relative w-full h-full">
-                  <div
-                    className="absolute inset-0 bg-red-primary/10 blur-3xl rounded-full"
-                  />
-
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ImageWithFallback
-                      src="/images/bulldog-coder.webp"
-                      alt="Голубой французский бульдог за компьютером"
-                      fill
-                      className="object-contain opacity-90"
-                      fallback={
-                        <div className="flex flex-col items-center justify-center gap-4">
-                          <div className="text-8xl">🐶</div>
-                          <div className="text-6xl opacity-80">👓</div>
-                          <div className="text-4xl">⌨️</div>
-                        </div>
-                      }
-                    />
-                  </div>
-                </div>
+            <div className="relative w-64 h-64 xl:w-72 xl:h-72 animate-typing">
+              <div className="absolute inset-0 bg-red-primary/10 blur-3xl rounded-full" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <ImageWithFallback
+                  src="/images/bulldog-coder.png"
+                  alt="Бульдог на видеозвонке за ноутбуком"
+                  fill
+                  className="object-contain opacity-95"
+                  fallback={
+                    <div className="flex flex-col items-center justify-center gap-2 text-6xl">
+                      💻🐶
+                    </div>
+                  }
+                />
+              </div>
+            </div>
+            <div className="relative w-52 h-52 xl:w-60 xl:h-60">
+              <div className="absolute inset-0 bg-red-primary/10 blur-2xl rounded-full" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <ImageWithFallback
+                  src="/images/bulldog-fix.png"
+                  alt="Бульдог с кабелями — I fix stuff"
+                  fill
+                  className="object-contain opacity-95"
+                  fallback={
+                    <div className="text-5xl">🔧</div>
+                  }
+                />
               </div>
             </div>
           </div>

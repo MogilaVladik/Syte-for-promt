@@ -143,7 +143,7 @@ export default function Hero() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <ImageWithFallback
                       src="/images/bulldog-hero.png"
-                      alt="Голубой французский бульдог"
+                      alt="Бульдог-разработчик за клавиатурой"
                       fill
                       priority
                       className="object-contain opacity-90"
