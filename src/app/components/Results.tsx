@@ -68,7 +68,7 @@ export default function Results() {
             <span className="text-red-primary font-bold">
               Бонус:
             </span>{" "}
-            Все участники получают подписку на Onlook на весь
+            Все участники получают подписку на Cursor на весь
             период обучения + 2 недели после завершения курса
           </p>
         </div>

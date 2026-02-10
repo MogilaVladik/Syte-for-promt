@@ -12,7 +12,7 @@ export default function CourseSchema() {
     "@type": "Course",
     name: "Курс по промптингу для менеджеров",
     description:
-      "4 практических занятия: Onlook, Cursor, GitHub. Соберите свой AI-MVP и опубликуйте его. В цену включена подписка на Onlook",
+      "4 практических занятия: Onlook, Cursor, GitHub. Соберите свой AI-MVP и опубликуйте его. В цену включена подписка на Cursor",
     provider: {
       "@type": "Organization",
       name: "Time to IT",

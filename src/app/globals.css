@@ -119,6 +119,29 @@ html {
     background: #c20712;
 }
 
+/* Отзывы: аккуратный тонкий горизонтальный ползунок */
+.testimonials-scroller {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(229, 9, 20, 0.6) transparent;
+}
+
+.testimonials-scroller::-webkit-scrollbar {
+    height: 6px;
+}
+
+.testimonials-scroller::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.testimonials-scroller::-webkit-scrollbar-thumb {
+    background: rgba(229, 9, 20, 0.5);
+    border-radius: 3px;
+}
+
+.testimonials-scroller::-webkit-scrollbar-thumb:hover {
+    background: rgba(229, 9, 20, 0.75);
+}
+
 /* Selection styling */
 ::selection {
     background-color: #E50914;

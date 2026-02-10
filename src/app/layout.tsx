@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://timetoitai.ru"),
   title: `Курс по промптингу для менеджеров — старт ${COURSE_START_DATE} — ${PRICE_REGULAR.toLocaleString("ru-RU")} ₽`,
   description:
-    "4 практических занятия: Onlook, Cursor, GitHub. Соберите свой AI-MVP и опубликуйте его. В цену включена подписка на Onlook",
+    "4 практических занятия: Onlook, Cursor, GitHub. Соберите свой AI-MVP и опубликуйте его. В цену включена подписка на Cursor",
   keywords: [
     "курс по промптингу",
     "Cursor",

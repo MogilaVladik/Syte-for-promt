@@ -101,7 +101,7 @@ export default function Hero() {
                 После {EARLY_BIRD_DEADLINE} — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
               </p>
               <p className="text-caption text-gray-400 max-w-xs">
-                Включена подписка на Onlook на время курса
+                Включена подписка на Cursor на время курса
               </p>
 
               {/* CTA Button */}
@@ -134,18 +134,19 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Animated Bulldog */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+          {/* Right: Animated Bulldog — видно на всех экранах, включая мобильные */}
+          <div className="relative flex justify-center lg:justify-end min-h-[16rem] sm:min-h-[20rem] lg:min-h-0">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 flex-shrink-0">
               <div className="absolute inset-0 animate-float">
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-red-primary/20 blur-3xl rounded-full animate-glow" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <ImageWithFallback
-                      src="/images/bulldog-hero.png"
+                      src="/images/bulldog-hero.png?v=2"
                       alt="Бульдог-разработчик за клавиатурой"
                       fill
                       priority
+                      sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
                       className="object-contain opacity-90"
                       fallback={
                         <div className="text-9xl sm:text-[10rem] lg:text-[12rem] opacity-90">

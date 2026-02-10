@@ -53,7 +53,7 @@ export const schedule: ScheduleItem[] = [
 export const courseIncludes: string[] = [
   "4 живых занятия в Zoom",
   "Записи всех занятий (доступ 3 месяца)",
-  "Подписка на Onlook",
+  "Подписка на Cursor",
   "Шаблоны и библиотека промптов",
   "Доступ к закрытому Telegram-чату",
   "Поддержка преподавателя",

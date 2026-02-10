@@ -66,7 +66,7 @@ export default function Testimonials() {
         <div className="relative overflow-hidden">
           <div
             ref={scrollerRef}
-            className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 pt-2"
+            className="testimonials-scroller flex overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 pt-2"
           >
             {pages.map((pageItems, pageIndex) => (
               <div

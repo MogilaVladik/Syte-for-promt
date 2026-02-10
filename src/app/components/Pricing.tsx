@@ -92,7 +92,7 @@ export default function Pricing() {
                 <div className="mt-6 bg-gradient-to-r from-red-primary/20 to-transparent border border-red-primary p-4 rounded-xl">
                   <p className="text-body text-gray-300">
                     <span className="font-bold text-white">Важно:</span>{" "}
-                    Подписка на Onlook ($15/мес) уже включена
+                    Подписка на Cursor уже включена
                     в стоимость — экономия ~ $15!
                   </p>
                 </div>
