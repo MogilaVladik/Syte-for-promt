@@ -86,18 +86,23 @@ export default function Testimonials() {
 
                     {/* Ссылка на проект ученика */}
                     {t.projectUrl && (
-                      <a
-                        href={t.projectUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-[#E50914] hover:text-[#c20712] font-semibold text-sm mb-4 transition-colors group"
-                      >
-                        <Icon name="external-link" className="w-4 h-4" />
-                        <span>
-                          {t.projectLabel ?? "Смотреть проект"}
-                        </span>
-                        <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden>→</span>
-                      </a>
+                      <div className="mb-4 space-y-1">
+                        <a
+                          href={t.projectUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[#E50914] hover:text-[#c20712] font-semibold text-sm transition-colors group"
+                        >
+                          <Icon name="external-link" className="w-4 h-4" />
+                          <span>
+                            {t.projectLabel ?? "Смотреть проект"}
+                          </span>
+                          <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden>→</span>
+                        </a>
+                        <div className="text-xs text-gray-500">
+                          Для просмотра проекта нужен VPN
+                        </div>
+                      </div>
                     )}
 
                     {/* Author */}
