@@ -4,6 +4,7 @@ import { lessons } from "@/data/lessons";
 import type { Lesson } from "@/data/lessons";
 import Icon from "./ui/Icon";
 import Card from "./ui/Card";
+import Image from "next/image";
 
 export default function Program() {
   return (
@@ -120,6 +121,19 @@ export default function Program() {
                   <p className="text-gray-400">Программа курса будет доступна в ближайшее время.</p>
                 </Card>
               )}
+            </div>
+          </div>
+
+          {/* Right: фото автора, по центру блока */}
+          <div className="hidden lg:flex justify-center items-center min-h-[320px]">
+            <div className="relative w-56 h-72 xl:w-64 xl:h-80 flex justify-center items-center">
+              <Image
+                src="/images/author.png"
+                alt="Автор курса"
+                fill
+                className="object-contain object-center"
+                sizes="(max-width: 1024px) 0vw, 256px"
+              />
             </div>
           </div>
         </div>
