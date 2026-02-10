@@ -150,7 +150,7 @@ export default function LeadForm() {
               <span className="text-sm text-gray-300 group-hover:text-gray-200">
                 Даю{" "}
                 <Link
-                  href="/privacy#soglasie"
+                  href="/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#E50914] hover:underline"
