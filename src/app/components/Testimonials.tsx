@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { testimonials } from "@/data/testimonials";
 import Icon from "./ui/Icon";
 
+const THUMB_LENGTH_RATIO = 0.5; // ползунок в 2 раза короче обычного
+
 export default function Testimonials() {
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const pages = useMemo(() => Array.from(
@@ -12,7 +14,9 @@ export default function Testimonials() {
   ), [itemsPerPage]);
   const pageCount = pages.length;
   const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
   const [page, setPage] = useState(0);
+  const [scrollState, setScrollState] = useState({ scrollLeft: 0, scrollWidth: 0, clientWidth: 0 });
 
   useEffect(() => {
     const update = () => {
@@ -27,15 +31,25 @@ export default function Testimonials() {
     const scroller = scrollerRef.current;
     if (!scroller) return;
 
-    const handleScroll = () => {
+    const updateScrollState = () => {
+      setScrollState({
+        scrollLeft: scroller.scrollLeft,
+        scrollWidth: scroller.scrollWidth,
+        clientWidth: scroller.clientWidth,
+      });
       const width = scroller.clientWidth || 1;
       const nextPage = Math.round(scroller.scrollLeft / width);
       setPage(Math.min(Math.max(nextPage, 0), pageCount - 1));
     };
 
-    handleScroll();
-    scroller.addEventListener("scroll", handleScroll, { passive: true });
-    return () => scroller.removeEventListener("scroll", handleScroll);
+    updateScrollState();
+    scroller.addEventListener("scroll", updateScrollState, { passive: true });
+    const ro = new ResizeObserver(updateScrollState);
+    ro.observe(scroller);
+    return () => {
+      scroller.removeEventListener("scroll", updateScrollState);
+      ro.disconnect();
+    };
   }, [pageCount]);
 
   const scrollToPage = (nextPage: number) => {
@@ -43,6 +57,27 @@ export default function Testimonials() {
     if (!scroller) return;
     const width = scroller.clientWidth || 0;
     scroller.scrollTo({ left: width * nextPage, behavior: "smooth" });
+  };
+
+  const { scrollLeft, scrollWidth, clientWidth } = scrollState;
+  const trackWidth = trackRef.current?.clientWidth ?? clientWidth || 1;
+  const maxScroll = Math.max(0, scrollWidth - clientWidth);
+  const thumbWidth = maxScroll > 0
+    ? Math.max(20, (clientWidth / scrollWidth) * trackWidth * THUMB_LENGTH_RATIO)
+    : trackWidth;
+  const thumbLeft = maxScroll > 0
+    ? (scrollLeft / maxScroll) * (trackWidth - thumbWidth)
+    : 0;
+
+  const handleTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const scroller = scrollerRef.current;
+    const track = trackRef.current;
+    if (!scroller || !track || maxScroll <= 0) return;
+    const rect = track.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const newThumbLeft = Math.max(0, Math.min(clickX - thumbWidth / 2, trackWidth - thumbWidth));
+    const newScrollLeft = (newThumbLeft / (trackWidth - thumbWidth)) * maxScroll;
+    scroller.scrollTo({ left: newScrollLeft, behavior: "smooth" });
   };
 
   return (
@@ -66,7 +101,7 @@ export default function Testimonials() {
         <div className="relative overflow-hidden">
           <div
             ref={scrollerRef}
-            className="testimonials-scroller flex overflow-x-auto scroll-smooth snap-x snap-mandatory pt-2 pb-6"
+            className="testimonials-scroller flex overflow-x-auto scroll-smooth snap-x snap-mandatory pt-2 pb-2"
           >
             {pages.map((pageItems, pageIndex) => (
               <div
@@ -119,6 +154,25 @@ export default function Testimonials() {
                 </div>
               </div>
             ))}
+          </div>
+          {/* Кастомный ползунок: длина в 2 раза короче обычного */}
+          <div
+            ref={trackRef}
+            role="scrollbar"
+            aria-valuenow={maxScroll > 0 ? Math.round((scrollLeft / maxScroll) * 100) : 0}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="Прокрутка отзывов"
+            className="h-0.5 w-full rounded-full bg-white/10 cursor-pointer mt-4 mx-auto max-w-full"
+            onClick={handleTrackClick}
+          >
+            <div
+              className="h-full rounded-full bg-red-primary/70 hover:bg-red-primary transition-colors pointer-events-none"
+              style={{
+                width: `${thumbWidth}px`,
+                transform: `translateX(${thumbLeft}px)`,
+              }}
+            />
           </div>
         </div>
 

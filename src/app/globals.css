@@ -119,27 +119,13 @@ html {
     background: #c20712;
 }
 
-/* Отзывы: аккуратный тонкий горизонтальный ползунок */
+/* Отзывы: кастомный ползунок (длина в 2 раза короче), нативный скрыт */
 .testimonials-scroller {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(229, 9, 20, 0.6) transparent;
+    scrollbar-width: none;
 }
 
 .testimonials-scroller::-webkit-scrollbar {
-    height: 1px;
-}
-
-.testimonials-scroller::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.testimonials-scroller::-webkit-scrollbar-thumb {
-    background: rgba(229, 9, 20, 0.5);
-    border-radius: 3px;
-}
-
-.testimonials-scroller::-webkit-scrollbar-thumb:hover {
-    background: rgba(229, 9, 20, 0.75);
+    display: none;
 }
 
 /* Selection styling */
