@@ -3,10 +3,7 @@
 import { courseIncludes } from "@/data/course";
 import {
   TELEGRAM_URL,
-  PRICE_EARLY,
   PRICE_REGULAR,
-  PRICE_PER_LESSON,
-  EARLY_BIRD_DEADLINE,
   COURSE_START_DATE,
 } from "@/config/constants";
 import Icon from "./ui/Icon";
@@ -32,41 +29,32 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* Карточка цены — БЕЗ «раннего бронирования», БЕЗ «до …», БЕЗ жёлтой плашки */}
+        {/* Карточка цены */}
         <div className="max-w-4xl mx-auto">
             <div className="relative bg-black border border-red-primary rounded-3xl p-8 sm:p-12 shadow-2xl shadow-red-primary/30">
-            {/* бейдж «старт …» оставляем, если нужен. Зеленого «До …» больше нет */}
+            {/* бейдж «старт …» */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
               <div className="bg-red-primary text-white px-6 py-2 rounded-full text-caption font-bold">
                 СТАРТ {COURSE_START_DATE.toUpperCase()}
               </div>
             </div>
-              <div className="mt-6 mb-2 text-center">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-primary/15 border border-red-primary/40 text-red-primary text-caption font-semibold uppercase tracking-wide animate-pulse">
-                  До {EARLY_BIRD_DEADLINE} — {PRICE_EARLY.toLocaleString("ru-RU")} ₽
-                </span>
-              </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Левая колонка: цена */}
               <div className="text-center lg:text-left">
                 <div className="mb-4">
                   <div className="text-display font-bold text-white whitespace-nowrap">
-                    {PRICE_EARLY.toLocaleString("ru-RU")}
+                    {PRICE_REGULAR.toLocaleString("ru-RU")}
                     {"\u00A0"}₽
-                  </div>
-                  <div className="text-lead text-gray-500 line-through mt-2">
-                    {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
                   </div>
                 </div>
 
                 <div className="text-body text-gray-300 mb-4">
-                  После {EARLY_BIRD_DEADLINE} — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
+                  Фиксированная стоимость за весь курс
                 </div>
 
-                {/* Кнопка без ограничений по дате и без «спеццена до …» */}
                 <Button variant="primary" fullWidth>
-                  Записаться за {PRICE_EARLY.toLocaleString("ru-RU")} ₽
+                  Записаться за {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
                 </Button>
               </div>
 

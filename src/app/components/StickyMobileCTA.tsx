@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { PRICE_REGULAR } from "@/config/constants";
 
 export default function StickyMobileCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +34,7 @@ export default function StickyMobileCTA() {
             className="flex-1 px-4 py-3 bg-red-primary hover:bg-red-primary/90 text-white font-bold text-center rounded-xl transition-all shadow-lg active:scale-95"
             data-oid="q32q1b8"
           >
-            Записаться — 35 000 ₽
+            Записаться — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
           </a>
 
           {/* Telegram Icon Button */}

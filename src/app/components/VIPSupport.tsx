@@ -168,15 +168,8 @@ export default function VIPSupport() {
                       ₽
                     </span>
                   </div>
-                  <div
-                    className="text-body text-gray-500 mb-2"
-                  >
-                    Вместо 135 000 ₽ при отдельной покупке
-                  </div>
-                  <div
-                    className="inline-block bg-green-500/20 border border-green-500 text-green-400 px-4 py-2 rounded-full text-caption font-bold"
-                  >
-                    Экономия 35 000 ₽
+                  <div className="text-body text-gray-400 mb-2">
+                    Фиксированная стоимость VIP-пакета
                   </div>
                 </div>
 

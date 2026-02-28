@@ -1,44 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Icon from "./ui/Icon";
 import ImageWithFallback from "./ui/ImageWithFallback";
 import {
   TELEGRAM_URL,
-  PRICE_EARLY,
   PRICE_REGULAR,
-  EARLY_BIRD_DEADLINE,
-  EARLY_BIRD_DEADLINE_ISO,
   COURSE_START_DATE,
 } from "@/config/constants";
 
 export default function Hero() {
-  const [timeLeft, setTimeLeft] = useState("");
-
-  useEffect(() => {
-    const deadline = new Date(`${EARLY_BIRD_DEADLINE_ISO}T23:59:59+03:00`).getTime();
-
-    const format = (ms: number) => {
-      if (ms <= 0) return "";
-      const totalSeconds = Math.floor(ms / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor((totalSeconds % 86400) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-      const pad = (n: number) => String(n).padStart(2, "0");
-      return `${days}д ${pad(hours)}ч ${pad(minutes)}м ${pad(seconds)}с`;
-    };
-
-    const tick = () => {
-      const diff = deadline - Date.now();
-      setTimeLeft(format(diff));
-    };
-
-    tick();
-    const id = window.setInterval(tick, 1000);
-    return () => window.clearInterval(id);
-  }, []);
-
   return (
     <section
       id="hero"
@@ -75,31 +45,12 @@ export default function Hero() {
 
             {/* Price Block — больше воздуха между элементами */}
             <div className="w-full max-w-md sm:max-w-lg bg-black p-6 sm:p-8 rounded-3xl shadow-2xl animate-fade-in-up [animation-delay:400ms] border-2 border-red-primary/30 relative mx-auto lg:mx-0 space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 text-caption font-semibold uppercase tracking-wide animate-pulse">
-                <span aria-hidden>🔥</span>
-                До {EARLY_BIRD_DEADLINE} — {PRICE_EARLY.toLocaleString("ru-RU")} ₽
-              </div>
-              {timeLeft ? (
-                <div className="text-caption text-amber-200/90">
-                  До конца скидки: <span className="font-semibold">{timeLeft}</span>
-                </div>
-              ) : (
-                <div className="text-caption text-gray-400">
-                  Скидка завершилась
-                </div>
-              )}
               <div className="flex items-baseline gap-3 sm:gap-4 justify-center lg:justify-start">
                 <div className="text-display font-bold text-white">
-                  {PRICE_EARLY.toLocaleString("ru-RU")} ₽
-                </div>
-                <div className="text-body text-gray-500 line-through">
                   {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
                 </div>
               </div>
 
-              <p className="text-caption text-gray-300 max-w-xs">
-                После {EARLY_BIRD_DEADLINE} — {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
-              </p>
               <p className="text-caption text-gray-400 max-w-xs">
                 Включена подписка на Cursor на время курса
               </p>
@@ -112,7 +63,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="px-8 py-4 bg-red-primary hover:bg-[#c20712] text-white font-bold text-lead rounded-2xl transition-all shadow-lg hover:shadow-red-primary/50 hover:scale-105"
                 >
-                  Записаться за {PRICE_EARLY.toLocaleString("ru-RU")} ₽
+                  Записаться за {PRICE_REGULAR.toLocaleString("ru-RU")} ₽
                 </a>
               </div>
 
