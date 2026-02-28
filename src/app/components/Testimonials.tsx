@@ -60,7 +60,7 @@ export default function Testimonials() {
   };
 
   const { scrollLeft, scrollWidth, clientWidth } = scrollState;
-  const trackWidth = trackRef.current?.clientWidth ?? clientWidth || 1;
+  const trackWidth = (trackRef.current?.clientWidth ?? clientWidth) || 1;
   const maxScroll = Math.max(0, scrollWidth - clientWidth);
   const thumbWidth = maxScroll > 0
     ? Math.max(20, (clientWidth / scrollWidth) * trackWidth * THUMB_LENGTH_RATIO)
