@@ -110,7 +110,7 @@ export default function OfferPage() {
           <br />
           Адрес: г. Москва, ул. Видная, д. 2
           <br />
-          E-mail: sasha.vlad.mog@inbox.ru · Тел.: +7 (929) 578-86-05
+          Электронная почта: sasha.vlad.mog@inbox.ru · Тел.: +7 (929) 578-86-05
         </p>
 
         <section className="space-y-6 leading-relaxed">
@@ -200,7 +200,7 @@ export default function OfferPage() {
               услуги.
             </p>
             <p>
-              Для отказа необходимо направить заявление на e-mail Исполнителя с темой письма
+              Для отказа необходимо направить заявление на электронную почту Исполнителя с темой письма
               «Отказ от услуги». Срок рассмотрения обращения — до 10 календарных дней.
             </p>
           </div>
@@ -238,7 +238,7 @@ export default function OfferPage() {
               <p>Статус: самозанятый (НПД, РФ)</p>
               <p>ИНН: 352832307870</p>
               <p>Адрес: г. Москва, ул. Видная, д. 2</p>
-              <p>E-mail: sasha.vlad.mog@inbox.ru</p>
+              <p>Электронная почта: sasha.vlad.mog@inbox.ru</p>
               <p>Телефон: +7 (929) 578-86-05</p>
             </div>
           </div>

@@ -81,7 +81,7 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors"
                   data-oid="fqxrsxf"
                 >
-                  FAQ
+                  Вопросы и ответы
                 </a>
               </li>
             </ul>

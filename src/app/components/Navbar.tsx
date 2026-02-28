@@ -64,7 +64,7 @@ export default function Navbar() {
               className="text-gray-300 hover:text-white transition-colors text-body"
               aria-label="Перейти к часто задаваемым вопросам"
             >
-              FAQ
+              Вопросы и ответы
             </a>
           </div>
 

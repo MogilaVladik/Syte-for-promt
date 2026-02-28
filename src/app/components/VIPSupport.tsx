@@ -41,7 +41,7 @@ export default function VIPSupport() {
             <h2
               className="text-title font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600"
             >
-              VIP СОПРОВОЖДЕНИЕ
+              ПРЕМИУМ СОПРОВОЖДЕНИЕ
             </h2>
             <Icon
               name="star"
@@ -69,7 +69,7 @@ export default function VIPSupport() {
                 className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-8 py-3 rounded-full text-lead font-black shadow-lg flex items-center justify-center gap-2 text-center"
               >
                 <span aria-hidden>★</span>
-                <span>VIP ПАКЕТ</span>
+                <span>ПРЕМИУМ ПАКЕТ</span>
                 <span aria-hidden>★</span>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function VIPSupport() {
                 <h3
                   className="text-heading font-bold text-white mb-6"
                 >
-                  Что входит в VIP-пакет
+                  Что входит в премиум-пакет
                 </h3>
 
                 <div className="space-y-4 mb-8">
@@ -157,7 +157,7 @@ export default function VIPSupport() {
                   <div
                     className="text-body text-gray-400 mb-2"
                   >
-                    Стоимость VIP-пакета
+                    Стоимость премиум-пакета
                   </div>
                   <div
                     className="text-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-4"
@@ -169,7 +169,7 @@ export default function VIPSupport() {
                     </span>
                   </div>
                   <div className="text-body text-gray-400 mb-2">
-                    Фиксированная стоимость VIP-пакета
+                    Фиксированная стоимость премиум-пакета
                   </div>
                 </div>
 
@@ -180,7 +180,7 @@ export default function VIPSupport() {
                   <div
                     className="text-body text-gray-400 mb-3"
                   >
-                    VIP-пакет включает:
+                    Премиум-пакет включает:
                   </div>
                   <ul className="space-y-2 text-left">
                     {vipIncludes.map((item, idx) => (
@@ -206,7 +206,7 @@ export default function VIPSupport() {
                   fullWidth
                   href={TELEGRAM_URL}
                 >
-                  Записаться на VIP-пакет
+                  Записаться на премиум-пакет
                 </Button>
 
                 <p className="text-caption text-gray-500 mt-4">
